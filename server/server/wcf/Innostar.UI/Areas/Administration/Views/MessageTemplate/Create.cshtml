@@ -1,0 +1,55 @@
+﻿@using Innostar.UI.Areas.Administration.ViewModels
+@model MessageTemplateViewModel
+
+@{
+    ViewBag.Title = "Шаблон сообщения";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "MessageTemplate", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.HiddenFor(modelitem => Model.Id)
+    @Html.HiddenFor(modelitem => Model.Blocked)
+
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th>Название параметра
+            </th>
+            <th>Значение параметра
+            </th>
+        </tr>
+        <tr>
+            <td class="title">
+                @Html.DisplayNameFor(modelItem => Model.Title)
+            </td>
+            <td>
+                @if (Model.Blocked)
+                {
+                    @Html.DisplayFor(modelItem => Model.Title)
+                }
+                else
+                {
+                    @Html.TextBoxFor(modelItem => Model.Title)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(modelItem => Model.Text)
+            </td>
+            <td>
+                @Html.TextAreaFor(modelItem => Model.Text, new { style = "height : 400px; width: 800px !important;" })
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Сохранить" class="btn btn-primary pull-left" />
+    
+    <div class="pull-right">
+        
+    </div>
+    
+}
+
+<div style="clear:both;"></div>
+@Html.Partial("_templatePrompt")

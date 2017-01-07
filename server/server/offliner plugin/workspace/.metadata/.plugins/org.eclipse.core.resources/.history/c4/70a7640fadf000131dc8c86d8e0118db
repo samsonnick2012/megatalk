@@ -1,0 +1,109 @@
+package com.omertex.offliner.interceptors;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.dom4j.Element;
+import org.jivesoftware.openfire.interceptor.PacketRejectedException;
+import org.jivesoftware.openfire.session.Session;
+import org.xmpp.packet.Message;
+import org.xmpp.packet.Packet;
+
+import com.omertex.offliner.mobile.IMobileSender;
+import com.omertex.offliner.mobile.MobileSender;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.Helper;
+import com.omertex.offliner.utilites.Logger;
+
+public class MobileInterceptor extends BaseInterceptor {
+
+	private IMobileSender mobileSender;
+	
+	private HashMap<String,String> customMessages;
+	
+	public MobileInterceptor(int order){
+		
+		super(order,"push");
+		
+		mobileSender = new  MobileSender();
+		
+		customMessages = new HashMap<String,String>();
+		
+		customMessages.put("friendRequest", "Пользователь # хочет добавить вас в друзья");
+		customMessages.put("acceptFriendRequest", "Пользователь # добавил вас в друзья");
+	}
+	
+	public void interceptPacket(Packet packet, Session session,
+			boolean incoming, boolean processed) throws PacketRejectedException {
+		
+       if(incoming && (!processed) && shouldProcessed(packet)){
+			
+			try{
+				
+				Message message = (Message)packet;
+
+				String from = message.getFrom().toBareJID().toString();
+				String to = message.getTo().toBareJID().toString();
+				
+				String senderUserName = Helper.jidToUserName(from);
+				String receiverUserName = Helper.jidToUserName(to);	
+				String senderName = Helper.removeXmppPrefix(senderUserName);
+				
+				String specificText = getSpecificRequestPushText(packet);
+				
+				if(specificText != null){
+					
+					specificText.replaceAll("#", senderUserName);
+					
+					mobileSender.send(specificText, receiverUserName);
+					
+					return;
+				}
+				
+				String pushMessage = createJson(senderName,"default",from,"9");
+				
+				if(Helper.isConferenceJid(from)){
+					
+					List<String> conferenceUsers = OpenfireDataHelper.GetConferenceUsersJids(receiverUserName);
+					
+					mobileSender.send(pushMessage, Helper.jidToUserName(conferenceUsers));
+				}
+				else{
+					mobileSender.send(pushMessage, receiverUserName);
+				}							
+				
+			}
+			catch(Exception ex){
+				Logger.Log(ex.getMessage());
+			}
+			
+		}
+	}
+	
+	public static String createJson(String alert, String sound, String senderJid, String badge){
+		HashMap<String,String> params = new HashMap<String,String>();
+		
+		params.put("alert", alert);
+		params.put("sound", sound);
+		params.put("jidSender", senderJid);
+		params.put("badge", badge);
+		
+		return MobileSender.createCustomJsonMessage(params);
+	}
+	
+	private String getSpecificRequestPushText(Packet packet){
+		
+		Element body = packet.getElement();
+		
+		for(String specificTag : customMessages.keySet()){
+			
+			if(body.element(specificTag) != null){
+				
+				return customMessages.get(specificTag);
+			}
+		}
+		
+		return null;
+	}
+	
+}

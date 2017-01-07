@@ -1,0 +1,38 @@
+﻿@using Microsoft.Ajax.Utilities
+@model Application.Core.Data.IPageableList
+
+@if (Model.TotalCount > Model.PageInfo.PageSize)
+{
+    var totalPageSize = Model.TotalCount / Model.PageInfo.PageSize + 1;
+    var endIndex = Model.PageInfo.PageNumber + 10 > totalPageSize ? totalPageSize : Model.PageInfo.PageNumber + 10;
+    var beginIndex = Model.PageInfo.PageNumber;
+
+    while (endIndex - beginIndex < 10 && beginIndex > 1)
+    {
+        beginIndex--;
+    }
+    
+    <div>
+        Страница @(Model.PageInfo.PageNumber) из @totalPageSize
+    </div>
+
+    <div  style="text-align: center;">
+        <ul class="pagination" style="text-align: center;">
+            <li>@Html.ActionLink("Предыдущая", "Index", new { pageNumber = (Model.PageInfo.PageNumber - 1) <= 0 ? 1 : Model.PageInfo.PageNumber - 1, text = ViewData["text"] })</li>
+
+            @for (var i = beginIndex; i <= endIndex; i++)
+            {
+                if (Model.PageInfo.PageNumber == i)
+                {
+                <li class="active">@Html.ActionLink(i.ToStringInvariant(), "Index", new { pageNumber = i, text = ViewData["text"] })</li>
+                }
+                else
+                {
+                <li>@Html.ActionLink(i.ToStringInvariant(), "Index", new { pageNumber = i, text = ViewData["text"] })</li>
+                }
+            }
+
+            <li>@Html.ActionLink("Следующая", "Index", new { pageNumber = (Model.PageInfo.PageNumber + 1) >= totalPageSize ? totalPageSize : Model.PageInfo.PageNumber + 1, text = ViewData["text"] })</li>
+        </ul>
+    </div>
+}

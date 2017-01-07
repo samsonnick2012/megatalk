@@ -1,0 +1,10 @@
+﻿@model string
+<div class="pull-left" style="margin-bottom: 10px; width: 500px;">
+    @using (Html.BeginForm("Index", @Model, FormMethod.Get))
+    {
+        <input type="search" placeholder="поиск" name="text" value="@ViewData["text"]" id="text" class="form-control" style="float: left; width: 400px; height: 41px;" />
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Поиск</button>
+        </span>
+    }
+</div>

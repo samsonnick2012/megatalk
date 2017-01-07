@@ -1,0 +1,647 @@
+2013-11-25 19:47:04,148 [2976] ERROR [(null)] - ErrorUid: 821D9027-14CD-47D8-B365-2B37ECB23EE8
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:47:52,731 [2976] ERROR [(null)] - ErrorUid: 0D9DCDB6-4299-42BA-A965-C7980E2016D0
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:50:51,493 [7128] ERROR [(null)] - ErrorUid: 803D7ECD-E800-4208-B7F1-5921FC93B9A5
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/5'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/5'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:52:40,177 [7128] ERROR [(null)] - ErrorUid: 05A81F07-B5FB-43B9-8621-AEC085A0F799
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:52:52,993 [7128] ERROR [(null)] - ErrorUid: F197E81E-3C53-436F-B195-41B001BA846A
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:53:39,835 [7128] ERROR [(null)] - ErrorUid: 74F30B85-BF39-49E0-B08E-9E9A1B14E0B0
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:54:20,933 [7128] ERROR [(null)] - ErrorUid: A8798009-842E-4F66-B849-0C1D638C5571
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:55:08,189 [7128] ERROR [(null)] - ErrorUid: 5562AE91-4525-4003-97E4-014C0AC30043
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/userprofile/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:55:52,486 [7128] ERROR [(null)] - ErrorUid: B018C959-5073-4964-A17D-A027EB68B7AA
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:56:10,276 [7128] ERROR [(null)] - ErrorUid: 30D75E6F-BD57-4795-B590-69C194FB11C7
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2013-11-25 19:57:13,647 [6892] ERROR [(null)] - ErrorUid: E4812807-5163-4803-8A02-62353C81440E
+                                             [System.Web.HttpException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)
+[System.ServiceModel.EndpointNotFoundException : There was no channel actively listening at 'http://amozheyko.omertex.com:8200/Service/Service.svc/getroster/1'. This is often caused by an incorrect address URI. Ensure that the address to which the message is sent matches an address on which a service is listening.]
+   at System.ServiceModel.Activation.HostedHttpTransportManager.HttpContextReceived(HostedHttpRequestAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.HandleRequest()
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.BeginRequest()
+
+                                             
+2014-01-03 17:27:59,587 [2156] ERROR [(null)] - ErrorUid: 3A9968DC-52E8-4165-AA71-8F88DBDB37DB
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 32
+[System.Data.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.]
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.LazyInternalContext.MarkDatabaseInitialized()
+   at System.Data.Entity.Database.Initialize(Boolean force)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+[System.Data.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.]
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+[System.Data.SqlClient.SqlException : Login failed for user 'sa'.]
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+
+                                             
+2014-01-03 17:41:47,207 [2156] ERROR [(null)] - ErrorUid: 76F6D522-17E2-4335-9CA5-DA4486337ADA
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 32
+[System.Data.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.]
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.LazyInternalContext.MarkDatabaseInitialized()
+   at System.Data.Entity.Database.Initialize(Boolean force)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+[System.Data.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.]
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+[System.Data.SqlClient.SqlException : Login failed for user 'omertexdev'.]
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+
+                                             
+2014-01-03 17:42:42,846 [2156] ERROR [(null)] - ErrorUid: 4CF0A5DA-9FC2-4962-977F-BD514F849C09
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 32
+[System.Data.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.]
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.LazyInternalContext.MarkDatabaseInitialized()
+   at System.Data.Entity.Database.Initialize(Boolean force)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+[System.Data.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.]
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+[System.Data.SqlClient.SqlException : Login failed for user 'omertexdev'.]
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+
+                                             
+2014-01-03 17:47:18,464 [7464] ERROR [(null)] - ErrorUid: 66D0FC3B-35B4-4CBA-864D-83DF9E6E49CE
+                                             [System.NullReferenceException : Object reference not set to an instance of an object.]
+   at XChat.Controllers.HomeController.GetFile(Int32 id) in d:\Work\Project Wechat\server\XChat\Controllers\HomeController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 17:49:43,598 [3496] ERROR [(null)] - ErrorUid: 0B8B84C5-73D0-43B5-95D6-6F1ACB6446EE
+                                             [System.NullReferenceException : Object reference not set to an instance of an object.]
+   at XChat.Controllers.HomeController.GetFile(Int32 id) in d:\Work\Project Wechat\server\XChat\Controllers\HomeController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 17:51:25,424 [6556] ERROR [(null)] - ErrorUid: 1230BF77-C1AA-4C73-856D-B6B86A55FB70
+                                             [System.NullReferenceException : Object reference not set to an instance of an object.]
+   at XChat.Controllers.HomeController.GetFile(Int32 id) in d:\Work\Project Wechat\server\XChat\Controllers\HomeController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:05:52,285 [7424] ERROR [(null)] - ErrorUid: EF7E0F2D-2AD9-428B-AB56-C6E7F10D149A
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:06:59,111 [4076] ERROR [(null)] - ErrorUid: E5AC6228-45BE-499F-9ABF-90AEC244CA83
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:07:34,733 [6404] ERROR [(null)] - ErrorUid: D98D65FF-6C98-4C6E-9B57-DE11DCA01288
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:08:26,529 [6404] ERROR [(null)] - ErrorUid: 0DB6165E-6767-46E6-B73E-B11D9CF0E198
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:11:06,465 [4300] ERROR [(null)] - ErrorUid: 584D1A4E-A10B-4185-A381-194FC12C6E6D
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:11:23,726 [4300] ERROR [(null)] - ErrorUid: DC62FE20-925A-4BF2-9DC3-38098E711AF8
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:11:25,519 [7964] ERROR [(null)] - ErrorUid: 86C53389-3F21-41BD-8487-80E6C8E09899
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:11:27,798 [7964] ERROR [(null)] - ErrorUid: F65F8765-96A9-492F-87C2-C0D941541966
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:14:24,931 [7964] ERROR [(null)] - ErrorUid: 6B3A619D-6B11-4645-AE99-A921559224C0
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:18:38,234 [7432] ERROR [(null)] - ErrorUid: CDFC9BC2-ABA8-44A2-A571-CEBB7FD0D253
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:18:43,147 [2384] ERROR [(null)] - ErrorUid: E16D1D4D-692C-406C-90AC-7CB4B6B1C5C7
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:22:26,270 [4088] ERROR [(null)] - ErrorUid: 71889BB8-0C52-402D-8440-1B24E1CF5DFB
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:24:23,480 [6952] ERROR [(null)] - ErrorUid: C4A730B9-ACB6-4AEB-8FCE-B847C3247399
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:26:40,018 [7812] ERROR [(null)] - ErrorUid: BF5171CB-8BFA-4576-8376-DE5C15542BC3
+                                             [System.Web.HttpException : A public action method 'UploadFile' was not found on controller 'XChat.Controllers.HomeController'.]
+   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:28:05,191 [6544] ERROR [(null)] - ErrorUid: B229FA8C-373E-4019-A273-F9D4F63316CA
+                                             [System.Web.HttpException : The controller for path '/uploadService' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:28:18,825 [6544] ERROR [(null)] - ErrorUid: 1B03FD87-1341-4432-A8FB-329D056D1B8A
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:32:07,484 [3316] ERROR [(null)] - ErrorUid: 7A303B29-0D87-4D16-A137-A2C3EDB16908
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:32:49,824 [3316] ERROR [(null)] - ErrorUid: 01A8F121-6B33-4233-9DD5-04F854FF5C72
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:33:15,533 [5384] ERROR [(null)] - ErrorUid: E967474B-D2B5-4ED0-AF51-3DEA2C3FA3B5
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:36:11,752 [6916] ERROR [(null)] - ErrorUid: 9870AA77-6775-4A9C-A85E-D0F2867C6F19
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:36:17,514 [6916] ERROR [(null)] - ErrorUid: 2FDF318D-6D03-4780-81AD-EB0E6BE1CFBA
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:36:49,474 [3596] ERROR [(null)] - ErrorUid: FB7F3432-B0CA-451B-8625-E2286BD3D618
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:36:59,912 [6916] ERROR [(null)] - ErrorUid: E02892EA-25D1-40D8-B15F-59F610DB69C8
+                                             [System.Web.HttpException : The controller for path '/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:37:17,478 [3596] ERROR [(null)] - ErrorUid: 5AD6B0D2-9EDF-451B-B111-761103448F31
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:37:23,251 [6916] ERROR [(null)] - ErrorUid: 6E331FA8-102B-40C4-B3D8-019A3B3C5771
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:37:32,198 [6916] ERROR [(null)] - ErrorUid: FF29798B-520A-4E4B-A0D3-207EE5ED52B2
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2014-01-03 18:37:34,574 [6916] ERROR [(null)] - ErrorUid: 2B7C48E1-FC90-40AE-9263-4186FE549F8C
+                                             [System.Web.HttpException : The controller for path '/UploadService.svc/UploadFile' was not found or does not implement IController.]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             

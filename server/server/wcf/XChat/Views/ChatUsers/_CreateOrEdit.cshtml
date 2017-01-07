@@ -1,0 +1,68 @@
+@model XChat.Models.DB.ChatUser
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Login)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Login)
+    @Html.ValidationMessageFor(model => model.Login)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(m => m.Password)
+</div>
+<div class="editor-field">
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(model => model.XmppLogin)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.XmppLogin)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.XmppLogin)
+    @Html.ValidationMessageFor(model => model.XmppLogin)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Email)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Phone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Phone)
+    @Html.ValidationMessageFor(model => model.Phone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Disabled)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Disabled)
+    @Html.ValidationMessageFor(model => model.Disabled)
+</div>
+<div class="editor-label">
+    Image
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ImageId, ((IEnumerable<XChat.Models.DB.ImageFile>)ViewBag.PossibleImages).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.FileName), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.ImageId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ImageId)
+</div>

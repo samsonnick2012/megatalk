@@ -1,0 +1,6 @@
+INDEX VERSION 1.3+C:\Users\beaver\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2786087672.index
+1319413902.index
+1036690595.index
+2164432350.index
+2417763123.index

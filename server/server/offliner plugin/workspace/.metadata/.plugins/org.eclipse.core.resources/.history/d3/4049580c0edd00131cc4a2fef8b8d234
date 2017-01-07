@@ -1,0 +1,10 @@
+package org.jivesoftware.openfire.plugin;
+
+import java.util.List;
+
+public class ChatMessages {
+
+	public List<String> messages;
+	
+	public String chatPartnerJid;
+}

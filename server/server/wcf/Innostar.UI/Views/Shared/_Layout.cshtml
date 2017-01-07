@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - MegaTalk</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	    <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jQueryExtensions")
+    @Scripts.Render("~/bundles/purl")
+	@Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", false)
+    @Styles.Render("~/Content/bootstrap/base")
+    @Styles.Render("~/Content/bootstrap/theme")
+    @Styles.Render("~/Content/basecss")
+    @Styles.Render("~/Content/controls")
+    @Styles.Render("~/Content/maps")
+	
+</head>
+<body>
+    <div id="body">
+        <section class="main-content">
+            @RenderBody()
+        </section>
+    </div>
+</body>
+</html>

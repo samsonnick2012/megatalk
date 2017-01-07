@@ -1,0 +1,34 @@
+﻿@model XChat.Helpers.CommonObjects.MenuItem
+@foreach (var item in Model.Items)
+{
+    if (item != null)
+    {
+        if (!String.IsNullOrEmpty(item.Url) && @item.Items.Count == 0)
+        {
+    <li><span class="file"><a href='@item.Url'>@item.Label</a></span></li>
+        }
+        else if (!String.IsNullOrEmpty(item.Url) && @item.Items.Count != 0)
+        {
+    <li class="closed"><span class="folder"><a href='@item.Url'>@item.Label</a></span>
+        @if (@item.Items.Count > 0)
+        {
+            <ul>
+                @Html.Partial("_MenuPartial", item)
+            </ul>
+        }
+    </li>
+        }
+        else
+        {
+    <li class="closed"><span class="folder">@item.Label</span>
+        @if (@item.Items.Count > 0)
+        {
+            <ul>
+                @Html.Partial("_MenuPartial", item)
+            </ul>
+        }
+    </li>
+        }
+    }
+}
+

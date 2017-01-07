@@ -1,0 +1,226 @@
+package com.omertex.offliner.mongodb.services;
+
+import java.io.StringReader;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.io.SAXReader;
+
+import com.google.code.morphia.query.Query;
+import com.google.code.morphia.query.UpdateOperations;
+import com.mongodb.BasicDBObject;
+import com.omertex.offliner.common.MessageType;
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.entities.TimeRestriction;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.DateUtilites;
+import com.omertex.offliner.utilites.JidUtilites;
+import com.omertex.offliner.utilites.Logger;
+
+public class ArchiveMessageService extends BaseMongoService<ArchiveMessage> {
+
+	public ArchiveMessageService() throws Exception {
+		super();
+	}
+	
+   
+    public List<ArchiveMessage> getChangedMessagesRelatedToUser(String userJid,List<String> userConferences, long from, long to){
+ 	   
+    	Query<ArchiveMessage> query = createQuery();
+    	
+    	List<String> jids = new ArrayList<String>(userConferences);
+    	
+    	jids.add(userJid);
+
+    	query.and(
+    			query.criteria("lastUpdated").greaterThanOrEq(from),
+    			query.criteria("lastUpdated").lessThanOrEq(to),
+    			query.or(
+						  createQuery().criteria("fromJid").equal(userJid),
+						  createQuery().criteria("toJid").hasAnyOf(jids)
+						),
+				query.criteria("messageType").notEqual(MessageType.system)
+		);
+    	
+    	return find(query).asList();
+    }
+    
+    public List<ArchiveMessage> getChangedMessagesRelatedToUser(String userJid, long globalRestriction, List<String> userConferences, long from) {
+  	   
+    	Query<ArchiveMessage> query = createQuery();
+    	
+    	List<String> jids = new ArrayList<String>(userConferences);
+    	
+    	jids.add(userJid);
+
+    	query.and(
+    			query.criteria("sentDate").greaterThanOrEq(globalRestriction),	
+    			query.criteria("lastUpdated").greaterThanOrEq(from),	
+    			query.or(
+  						  createQuery().criteria("fromJid").equal(userJid),
+  						  createQuery().criteria("toJid").hasAnyOf(jids)
+  						),
+  				query.criteria("messageType").notEqual(MessageType.system)
+		);
+    	
+    	Logger.Log(query.toString());
+    	return find(query).asList();
+    }
+     
+	public void AddReadJid(String readJid, long messageTimeStamp) throws ClassNotFoundException, SQLException, DocumentException{
+		
+		ArchiveMessage message = GetMessage(messageTimeStamp);
+		
+		message.getReadJids().add(readJid);
+		UpdateOperations<ArchiveMessage> ops = createUpdateOperations();
+		
+		if(message.isChat() && message.WasReadedByAllUsers(null)){
+			//remove message
+			Logger.Log("REMOVE CHAT MESSAGE - " + message.getMessage());
+			//Delete(message);
+			Document originalDoc = new SAXReader().read(new StringReader(message.getMessageXml()));
+			originalDoc.getRootElement().clearContent();
+			String newXml = originalDoc.asXML();
+			ops.set("message", "").set("messageXml", newXml);
+		}
+		else if((!message.isChat()) && message.WasReadedByAllUsers(OpenfireDataHelper.GetConferenceUsersJids(JidUtilites.jidToConferenceName(message.getToJid())))){
+			// remove message
+			Logger.Log("REMOVE CONFERENSE MESSAGE - " + message.getMessage());
+			//Delete(message);
+			Document originalDoc = new SAXReader().read(new StringReader(message.getMessageXml()));
+			originalDoc.getRootElement().clearContent();
+			String newXml = originalDoc.asXML();
+			ops.set("message", "").set("messageXml", newXml);
+		}
+		else{
+		
+			ops.add("readJids", readJid)
+					.set("lastUpdated", DateUtilites.getTimestamp());;
+			
+	
+		}
+		Query<ArchiveMessage> updateQuery = createQuery().field("sentDate").equal(messageTimeStamp);
+		Update(updateQuery,ops);
+	}
+	
+	public void AddDeliveredJid(String deliveredJid, long messageTimeStamp){
+		
+		UpdateOperations<ArchiveMessage> ops = createUpdateOperations()
+				.add("deliveredJids", deliveredJid)
+				.set("lastUpdated", DateUtilites.getTimestamp());
+		
+		
+		Query<ArchiveMessage> updateQuery = createQuery().field("sentDate").equal(messageTimeStamp);
+		
+		Update(updateQuery,ops);
+	}
+	
+	public ArchiveMessage GetMessage(long messageTimeStamp){
+		
+		Query<ArchiveMessage> query = createQuery();
+    	
+    	query.and(
+    			query.criteria("sentDate").greaterThanOrEq(messageTimeStamp)
+		);
+    	
+    	return find(query).get();
+	}
+	
+	public long CountUnreadUsingNativeDriver(String userJid, List<String> userConferences, ArchivePolicy policy){
+	    	
+	    	ArrayList orList = new ArrayList();
+	    	ArrayList orRestrictionList = new ArrayList();
+	    	ArrayList andResultList = new ArrayList();
+	    	
+	    	// for chats
+	    	orList.add(new BasicDBObject("toJid", userJid));
+	    	
+	    	if(userConferences.size() > 0){
+	    		orList.add(new BasicDBObject("toJid", new BasicDBObject("$in",userConferences)));
+	    	}
+			
+	    	BasicDBObject orClause = new BasicDBObject("$or",orList); 
+	    	
+	    	if(!policy.isEmty()){
+	    	   BasicDBObject orRestrictionClause = new BasicDBObject("$or",CreateRestrictionOrFilter(policy)); 
+	     	   andResultList.add(orRestrictionClause);
+	    	}
+	    	
+	    	if(policy.hasGlobalRestriction()){
+	    		andResultList.add(new BasicDBObject("sentDate", new BasicDBObject("$gt",policy.getGlobalRestriction())));
+	    	}
+	     
+	     	andResultList.add(orClause);
+	     	
+	     	andResultList.add(new BasicDBObject("readJids", new BasicDBObject("$nin",Arrays.asList(userJid))));
+	     	andResultList.add(new BasicDBObject("fromJid", new BasicDBObject("$ne",userJid)));
+	        andResultList.add(new BasicDBObject("messageType", new BasicDBObject("$ne",MessageType.system)));
+			
+			BasicDBObject query = new BasicDBObject("$and",andResultList);
+			
+			long result = Count(query);
+		
+			return result;
+	    }
+	
+     /**
+      * help fuction for CountUnreadUsingNativeDriver
+      * @param policy
+      * @return
+      */
+	private ArrayList CreateRestrictionOrFilter(ArchivePolicy policy){
+		
+		List<TimeRestriction> newList = new ArrayList<TimeRestriction>(policy.getChatRestrictions());
+		newList.addAll(policy.getConferenceRestrictions());
+		
+		ArrayList jids = new ArrayList();
+		
+		ArrayList orList = new ArrayList();
+		ArrayList andList = new ArrayList();
+				
+		for(TimeRestriction restriction : newList){
+
+			orList.add(CreateRestrictionUnit(restriction.getJid(),restriction.toDate()));
+			jids.add(restriction.getJid());
+		}
+		BasicDBObject orResult = new BasicDBObject();
+		BasicDBObject andUnit = new BasicDBObject();
+		
+		andUnit.put("fromJid",  new BasicDBObject("$nin",jids));
+		andUnit.put("toJid",  new BasicDBObject("$nin",jids));
+		
+		orList.add(andUnit);
+		
+		return orList;
+	}
+	
+	
+	/**	 
+     * help function for CreateRestrictionOrFilter
+	 * @param restrictionJid
+	 * @param toDate
+	 * @return
+	 */
+	private BasicDBObject CreateRestrictionUnit(String restrictionJid, long toDate){
+	
+		ArrayList orList = new ArrayList();
+		BasicDBObject result = new BasicDBObject();
+		
+		orList.add(new BasicDBObject("fromJid", new BasicDBObject("$eq",restrictionJid)));
+		orList.add(new BasicDBObject("toJid", new BasicDBObject("$eq",restrictionJid)));
+		
+		result.put("sentDate", new BasicDBObject("$gt",toDate));
+		result.put("$or", orList);
+			
+		return result;
+	}
+	
+	protected Class getGenericClass(){
+		return ArchiveMessage.class;
+	}
+}

@@ -1,0 +1,366 @@
+﻿html {
+    padding: 0;
+    margin-right: 10px;
+    margin: 0 auto;
+    overflow: no-display;
+}
+
+body {
+    height: 100%;
+    overflow: no-display;
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px 2px 0px #f0f0f0;
+    box-shadow: 0px 0px 2px 0px #f0f0f0;
+    border: 2px solid #f0f0f0;
+}
+
+a {
+    color: #4a8cf6;
+}
+
+.dashboard-item {
+    margin-top: 50px;
+}
+
+    .dashboard-item a {
+        padding: 80px;
+        background-color: #4a8cf6;
+        color: #ffffff;
+        float: left;
+        margin-right: 25px;
+    }
+
+        .dashboard-item a:hover {
+            text-decoration: underline;
+        }
+
+.tt-dropdown-menu {
+    background-color: white;
+    width: 100%;
+    border: 1px solid rgb(182, 182, 182);
+}
+
+.tt-suggestion {
+    padding: 5px;
+}
+
+.tt-suggestion:hover {
+    background-color: rgb(201, 201, 201);
+    padding: 5px;
+}
+
+.tt-is-under-cursor {
+    background-color: rgb(201, 201, 201);
+    padding: 5px;
+}
+
+.tt-hint {
+	color: transparent!important;
+}
+
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-right: 4px;
+}
+
+    .fileinput-button input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        border: solid transparent;
+        border-width: 0 0 100px 200px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -moz-transform: translate(-300px,0) scale(4);
+        direction: ltr;
+        cursor: pointer;
+    }
+
+.fileupload-buttonbar .btn, .fileupload-buttonbar .toggle {
+    margin-bottom: 5px;
+}
+
+.files .progress {
+    width: 200px;
+}
+
+.fileupload-processing .fileupload-loading {
+    display: block;
+}
+
+.navbar-default {
+    margin-bottom: 0;
+}
+
+.navbar-megatalk-color {
+    background-color: #126f0a !important;
+}
+
+.clear-search {
+    margin-left: -30px;
+    margin-top: -2px!important;
+    position: absolute;
+    top: 0;
+    left: 495px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0;
+    margin-top: 3px!important;
+    margin-left: -15px;
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+legend {
+    font-size: x-large;
+    border-bottom: 2px solid gainsboro;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.clear-search:focus,
+.clear-search:hover {
+    color: #999999!important;
+    background: transparent!important;
+    border: none!important;
+    background-image: none!important;
+}
+
+::-ms-input-placeholder {
+    margin-bottom: 15px!important;
+}
+
+::-ms-clear {
+    display: none;
+}
+
+/* main layout
+----------------------------------------------------------*/
+#body {
+    clear: both;
+    height: 100%;
+    overflow-x: no-display;
+}
+
+.main-content {
+    width: 100%;
+    height: inherit;
+    overflow-x: no-display;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header .site-logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: x-large;
+    text-align: right;
+    background-color: rgb(25, 163, 216);
+    padding-right: 5px;
+    color: #FBFDDB;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+/* login page */
+
+#login {
+    font-size: .85em;
+    margin-top: 15px;
+    margin-right: 15px;
+    color: white;
+}
+
+#loginForm {
+    height: 200px;
+}
+
+    #loginForm.hero-unit {
+        background-color: #E8E8E8;
+        padding: 120px;
+        padding-top: 50px;
+    }
+
+    #loginForm .login-fields {
+        width: 70%;
+    }
+
+    #loginForm .validation-error {
+        display: block;
+        margin-left: 15px;
+    }
+
+    #loginForm .validation-summary-errors ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #loginForm .validation-summary-errors li {
+        display: inline;
+        list-style: none;
+        margin: 0;
+    }
+
+    #loginForm input {
+        width: 250px;
+    }
+
+        #loginForm input[type="checkbox"],
+        #loginForm input[type="submit"],
+        #loginForm input[type="button"],
+        #loginForm button {
+            width: auto;
+        }
+
+#logoutForm {
+    display: inline;
+    margin-left: 15px;
+}
+
+#socialLoginForm {
+    margin-left: 40px;
+    float: left;
+    width: 40%;
+}
+
+    #socialLoginForm h2 {
+        margin-bottom: 5px;
+    }
+
+#socialLoginList button {
+    margin-bottom: 12px;
+}
+
+#logoutForm {
+    display: inline;
+}
+
+/* forms */
+
+label {
+    display: block;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="password"], textarea {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #333;
+    font-size: 1.2em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 500px!important;
+}
+
+.coordinates-provider-button {
+    margin-left: 15px;
+}
+
+textarea {
+    width: 500px;
+}
+
+.order-changer {
+    background-color: transparent;
+    margin-right: 10px;
+    color: black;
+}
+
+.editable-field-box {
+    position: relative;
+}
+
+    .editable-field-box > .form-control {
+        position: relative;
+        display: inline-block;
+    }
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+.user-filter-color {
+    background-color: #e2e2e2;
+    color: #333333 !important;
+    border: 1px solid #e2e2e2;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.validation-success {
+    border: 1px solid #1fe80c !important;
+}
+
+.validation-warning {
+    border: 1px solid #ff7b1f !important;
+}
+
+#organization-message-warning, 
+#project-message-warning {
+    color: #ff7b1f;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}

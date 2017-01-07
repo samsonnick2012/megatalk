@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ChatAcceptorIQHandler.java&apos; to &apos;openfire/src/plugins/Offliner/src/java/com.omertex.offliner.iqhandlers&apos;&#x0D;&#x0A;- Original project: &apos;openfire&apos;&#x0D;&#x0A;- Destination element: &apos;openfire/src/plugins/Offliner/src/java/com.omertex.offliner.iqhandlers&apos;&#x0D;&#x0A;- Original element: &apos;com.omertex.offliner.iqhandlers.ChatAcceptorIQHandler.java&apos;" description="Copy compilation unit" destination="/src\/plugins\/Offliner\/src\/java&lt;com.omertex.offliner.iqhandlers" element1="/src\/plugins\/Offliner\/src\/java&lt;com.omertex.offliner.iqhandlers{ChatAcceptorIQHandler.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1414672096878" units="1" version="1.0"/>
+</session>

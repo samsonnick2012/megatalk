@@ -1,0 +1,121 @@
+package org.jivesoftware.openfire.plugin;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.Iterator;
+
+import org.dom4j.Element;
+import org.dom4j.QName;
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.interceptor.PacketInterceptor;
+import org.jivesoftware.openfire.interceptor.PacketRejectedException;
+import org.jivesoftware.openfire.session.Session;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.Packet;
+
+
+public  class IQPacketInterceptor implements PacketInterceptor
+{    
+ 
+	static final String ArchiveIQMessageRootElementNamespace = "urn:xmpp:mam:tmp";
+	static final String ArchiveIQMessageRootElementName = "query";
+	static final String ArchiveIQMessageDateStartElementName = "start";
+	static final String ArchiveIQMessageDateEndElementName = "end";
+	
+    private XMPPServer mServer = XMPPServer.getInstance();
+
+	public void interceptPacket(Packet packet, Session session,
+			boolean incoming, boolean processed) throws PacketRejectedException {
+		
+		RightToFile("Packet Interceptor :");
+		if(!incoming || processed){
+			RightToFile("Packet Interceptor : !incoming || processed");
+			return;
+		}
+		 
+		 if(packet instanceof IQ && mServer.isLocal(packet.getTo())){
+			 
+			 RightToFile("Packet Interceptor : IQ");
+			  /*IQ iq = (IQ)packet;
+			  
+			  if(!isArchiveRequestPacket(iq)){
+				  //forward
+				  //return;
+				  throw new PacketRejectedException();
+			  }
+			  
+			  UserSettings settings = GetUserSettings(iq.getID());
+			  
+			  if(settings.IsArchiveDisabled){
+				  //decline packet or (in future implementation) handle with IQHandler
+				  throw new PacketRejectedException();
+			  }
+			  
+			  // update request
+			  Element root = iq.getChildElement();
+			  UpdateIQPacketArchiveRequest(root,settings);	*/            
+	     }
+		
+	}
+	
+	public UserSettings GetUserSettings(String uid){
+		
+		UserSettings settings = new UserSettings();
+		settings.DateStart = "2010-08-07T00:00:00Z";
+		
+		return settings;
+	}
+	
+	public boolean isArchiveRequestPacket(IQ packet){
+		
+		/*
+		if(!IQ.Type.get.equals(packet.getType())){			
+			return false;
+		}
+		
+		Element root = packet.getChildElement();
+		QName qname = root.getQName();
+		
+		if(ArchiveIQMessageRootElementNamespace.equals(qname.getNamespace()) && 
+				 ArchiveIQMessageRootElementNamespace.equals(qname.getName())){
+			 return true;
+		}*/
+		
+		return false;
+	}
+ 
+ 
+	private void UpdateIQPacketArchiveRequest(Element iqRoot, UserSettings settings){
+		
+		// remove possible user request settings
+		for ( Iterator i = iqRoot.elementIterator(); i.hasNext(); ) {
+            Element element = (Element) i.next();
+            
+            if(ArchiveIQMessageDateStartElementName.equals(element.getName()) ||
+            		ArchiveIQMessageDateEndElementName.equals(element.getName())){
+            	iqRoot.remove(element);
+            }
+        }
+		
+		iqRoot.addElement(ArchiveIQMessageDateStartElementName).addText(settings.DateStart);		
+	}
+	
+	private void RightToFile(String message){
+		Writer writer = null;
+
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+			          new FileOutputStream(new File("D:\\filename.txt"),true), "utf-8"));
+		    writer.write(message + "   ");
+		    writer.write(System.getProperty( "line.separator" ));
+		} catch (IOException ex) {
+		  // report
+		} finally {
+		   try {writer.close();} catch (Exception ex) {}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package org.jivesoftware.openfire.plugin;
+
+public class ChatMessage {
+	
+    public String message;
+    
+    public boolean wasRead;
+    
+    public boolean wasDelivered;
+    
+    public long timestamp;
+}

@@ -1,0 +1,211 @@
+package com.omertex.offliner.mongodb.entities;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.xmpp.packet.Message;
+import org.xmpp.packet.Message.Type;
+
+import com.google.code.morphia.annotations.Entity;
+import com.omertex.offliner.utilites.PacketParametrsHelper;
+ 
+@Entity
+public class ArchiveMessage extends BaseEntity {
+ 
+    private String uuid;
+    
+    private String messageType;
+    
+    private String message;
+    
+    private String messageXml;
+    
+    private String toJid;
+    
+    private String fromJid;
+    
+    private String toJidResource;
+    
+    private String fromJidResource;
+    
+    private long sentDate;
+    
+    private long lastUpdated;
+    
+    private boolean isChat;
+    
+    private List<String> readJids;
+    
+    private List<String> deliveredJids;
+    
+    
+    public ArchiveMessage(){
+    	readJids = new ArrayList<String>();
+    	deliveredJids = new ArrayList<String>();
+    }
+    
+    public ArchiveMessage(String message, String messageXml, String toJid, String fromJid, String toJidResource, String fromJidresource, long sentDate, boolean isChatMessage,String uuid,String messageType){
+    	this();
+    	
+    	setMessage(message);
+    	setMessageXml(messageXml);
+    	setToJid(toJid);
+    	setFromJid(fromJid);
+    	setToJidResource(toJidResource);
+    	setFromJidResource(fromJidresource);
+    	setSentDate(sentDate);
+    	setLastUpdateDate(sentDate);
+    	setIsChat(isChatMessage);
+    	setUuid(uuid);
+    	setMessageType(messageType);
+    }
+    
+    public ArchiveMessage(Message message) throws Exception{
+    	
+    	String to = message.getTo().toBareJID().toString();
+		String from = message.getFrom().toBareJID().toString();
+		String toJidResource = message.getTo().getResource();
+		String fromJidResource = message.getFrom().getResource();
+		String body = message.getBody();
+		String packetXml = message.toXML();
+		String uuid =  PacketParametrsHelper.getAttribute(message,"uuid");
+		
+		boolean isChatMessage = Type.chat.equals(message.getType());
+		String messageType = PacketParametrsHelper.getAttribute(message, "messagetype");
+		
+		long sentDate = 0;
+		
+		try{
+			sentDate = Long.parseLong(PacketParametrsHelper.getAttribute(message, "sentDate"));
+		}
+		catch(Exception e){
+			throw new Exception("Invalid sentDate attribute format. Must be epoch time in milleseconds");
+		}
+		
+		setMessage(body);
+    	setMessageXml(packetXml);
+    	setToJid(to);
+    	setFromJid(from);
+    	setToJidResource(toJidResource);
+    	setFromJidResource(fromJidResource);
+    	setSentDate(sentDate);
+    	setLastUpdateDate(sentDate);
+    	setIsChat(isChatMessage);
+    	setUuid(uuid);
+    	setMessageType(messageType);
+    }
+ 
+    public String getMessage() {
+        return message;
+    }
+ 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    public String getMessageXml() {
+        return messageXml;
+    }
+ 
+    public void setMessageXml(String messageXml) {
+        this.messageXml = messageXml;
+    }
+    
+    public String getToJid() {
+        return toJid;
+    }
+ 
+    public void setToJid(String toJid) {
+        this.toJid = toJid;
+    }
+    
+    public String getFromJid() {
+        return fromJid;
+    }
+ 
+    public void setFromJid(String fromJid) {
+        this.fromJid = fromJid;
+    }
+    
+    public String getToJidResource() {
+        return toJidResource;
+    }
+ 
+    public void setToJidResource(String toJidResource) {
+        this.toJidResource = toJidResource;
+    }
+    
+    public String getFromJidResource() {
+        return fromJidResource;
+    }
+ 
+    public void setFromJidResource(String fromJidResource) {
+        this.fromJidResource = fromJidResource;
+    }
+ 
+    public long getSentDate() {
+        return sentDate;
+    }
+    
+    public void setSentDate(long sentDate) {
+         this.sentDate = sentDate;
+    }
+    
+    public long getLastUpdateDate() {
+        return lastUpdated;
+    }
+    
+    public void setLastUpdateDate(long lastUpdated) {
+         this.lastUpdated = lastUpdated;
+    }
+ 
+    public boolean isChat() {
+        return isChat;
+    }
+ 
+    public void setIsChat(boolean isChat) {
+         this.isChat = isChat;
+    }
+    
+    public List<String> getReadJids() {
+        return readJids;
+    }
+ 
+    public void setReadJids(List<String> readJids) {
+        this.readJids = readJids;
+    }
+    
+    public List<String> getDeliveredJids() {
+        return deliveredJids;
+    }
+ 
+    public void setDeliveredJids(List<String> deliveredJids) {
+        this.deliveredJids = deliveredJids;
+    }
+    
+    public String getUuid() {
+        return uuid;
+    }
+ 
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+    
+   /* public String getMessageType() {
+        return messageType;
+    }*/
+    
+    public void setMessageType(String messageType) {
+         this.messageType = messageType;
+    }
+    
+ 
+    public boolean doesAnyDelivered(){
+    	return !deliveredJids.isEmpty();
+    }
+    
+    public boolean doesAnyRead(){
+    	return !readJids.isEmpty();
+    }
+}

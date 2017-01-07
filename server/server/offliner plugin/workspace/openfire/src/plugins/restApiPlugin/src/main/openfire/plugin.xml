@@ -1,0 +1,16 @@
+<plugin>
+    <!-- Main plugin class -->
+    <class>com.telexfree.restapi.RestApiPlugin</class>
+
+    <!-- Plugin meta-data -->
+    <name>TelexFREE rest api</name>
+    <description>Share openfire api via rest webservices</description>
+    <author>ITRex Group</author>
+    <version>1.0</version>
+    <date>04/17/2014</date>
+    <minServerVersion>3.3.0</minServerVersion>
+
+    <!-- Admin console meta-data -->
+    <adminconsole>
+    </adminconsole>
+</plugin>

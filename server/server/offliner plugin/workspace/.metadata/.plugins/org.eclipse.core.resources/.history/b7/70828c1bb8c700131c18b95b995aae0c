@@ -1,0 +1,11 @@
+package org.jivesoftware.openfire.plugin;
+
+public class UserSettings {
+	
+	public boolean IsArchiveDisabled;
+	
+	public String Start;
+	
+	public String End;
+
+}

@@ -1,0 +1,108 @@
+package com.omertex.offliner.iqhandlers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.Element;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.Presence;
+
+import com.omertex.offliner.mongodb.services.ArchiveMessageService;
+import com.omertex.offliner.utilites.Logger;
+import com.omertex.offliner.utilites.PacketParametrsHelper;
+
+public class BaseAcceptorIQHandler extends BaseIQHandler {
+
+    private ArchiveMessageService archiveMessageService;
+    
+	public BaseAcceptorIQHandler(String moduleName) throws Exception {
+		
+		super(moduleName);
+	
+	    archiveMessageService = new ArchiveMessageService();
+	}
+	
+	@Override
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+
+	    	try {  
+
+				  IQ.Type type = packet.getType();  
+				  
+				  String senderJid = packet.getFrom().toBareJID().toString();
+	 
+				  if (type.equals(IQ.Type.set)) 
+				  {  
+					  UpdateStatus(packet);
+	
+					  for(String userJid : GetReceiverJids(packet)){
+	
+						  Logger.Log("user jid = " + userJid);
+						  if(!userJid.equals(senderJid)){
+
+							  SendAcceptResponce(packet, userJid);	
+						  }			 				 
+					  }	
+					  
+					  return SuccessResponce(packet);
+				  }
+				  else {  
+				      return WrongTypeResponce(packet);  
+				  }  
+			     
+			 }catch (Exception e){  
+				
+				  return ErrorResponce(packet, e.getMessage()); 
+			 }   	    	
+	    }  
+	
+    protected List<String> GetReceiverJids(IQ request) throws  Exception{
+    	
+    	return new ArrayList<String>();
+    }
+    
+    
+	protected void SendAcceptResponce(IQ requestPacket, String receiverJid){
+		
+		Logger.Log("SendAcceptResponce start");
+		Presence responce = new Presence();
+		
+		Element body = responce.getElement();
+		
+		Element query = requestPacket.getChildElement().createCopy();
+		query.element("params")
+		.addElement("param")
+		   .addAttribute("key", "jid")
+		   .addAttribute("value", requestPacket.getFrom().toString());
+		
+		body.add(query);
+		
+		responce.setTo(receiverJid);
+
+		Route(responce);	
+		Logger.Log("SendAcceptResponce end");
+	}
+
+	public AcceptorActionType GetAcceptorType(){
+		
+	    String[] namespaceParts = info.getNamespace().split(":");
+	    
+	    return AcceptorActionType.valueOf(namespaceParts[namespaceParts.length - 1].toUpperCase());
+	}
+	
+	protected void UpdateStatus(IQ request) throws Exception{
+		
+		Logger.Log(PacketParametrsHelper.getParam(request,"timestamp"));
+		long timestamp = Long.parseLong(PacketParametrsHelper.getParam(request,"timestamp"));
+		Logger.Log("Update status 2");
+    	String from = request.getFrom().toBareJID().toString();
+    	  	
+    	switch(GetAcceptorType()){
+    	
+    		case READ:  archiveMessageService.AddReadJid(from, timestamp);break;
+    		
+    		case DELIVERED:  archiveMessageService.AddDeliveredJid(from, timestamp);break;
+    	}
+	}
+}

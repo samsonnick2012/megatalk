@@ -1,0 +1,43 @@
+﻿@model Innostar.UI.Areas.Administration.ViewModels.AccountViewModels.AccountManagmentViewModel
+
+<div>
+	<div class="pagination-right">
+		@Html.ActionLink("Сменить пароль", "ChangePassword", null, new { @class = "pull-right" })
+	</div>
+</div>
+
+@using (Html.BeginForm("UpdateProfile", "Account"))
+{
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary("Ошибка!", new { @class = "alert alert-error" })
+	<fieldset class="scheduler-border">
+		<div>
+			<div>
+				@Html.LabelFor(m => m.FirstName)
+				@Html.TextBoxFor(m => m.FirstName)
+				@Html.ValidationMessageFor(m => m.FirstName, "*")
+			</div>
+			<div>
+				@Html.LabelFor(m => m.LastName)
+				@Html.TextBoxFor(m => m.LastName)
+				@Html.ValidationMessageFor(m => m.LastName, "*")
+			</div>
+			<div>
+				@Html.LabelFor(m => m.MiddleName)
+				@Html.TextBoxFor(m => m.MiddleName)
+				@Html.ValidationMessageFor(m => m.MiddleName, "*")
+			</div>
+			<div>
+				@Html.LabelFor(m => m.Email)
+				@Html.TextBoxFor(m => m.Email)
+				@Html.ValidationMessageFor(m => m.Email, "*")
+			</div>
+			<div>
+				@Html.LabelFor(m => m.PhoneNumber)
+				@Html.TextBoxFor(m => m.PhoneNumber)
+				@Html.ValidationMessageFor(m => m.PhoneNumber, "*")
+			</div>
+			<input type="submit" class="btn btn-primary" value="Сохранить данные" />
+		</div>
+	</fieldset>
+}

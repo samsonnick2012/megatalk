@@ -1,0 +1,212 @@
+package com.omertex.offliner.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jivesoftware.database.DbConnectionManager;
+
+import com.omertex.offliner.common.UserToConferenceAssociation;
+import com.omertex.offliner.utilites.JidUtilites;
+import com.omertex.offliner.utilites.Logger;
+
+public class OpenfireDataHelper {
+	
+	 public static List<String> GetConferenceUsersJids(String conferenceName) throws ClassNotFoundException, SQLException{
+      	 
+	    	Connection conn = DbConnectionManager.getConnection();
+	    	
+	    	String sql = 
+	    			
+	    		   "DECLARE @roomId nvarchar(MAX) = " + 
+		 	    	   "( " +
+			    	      "SELECT roomID "  +  
+			    	      "FROM ofMucRoom "  +
+			    	      "WHERE name = '" + conferenceName +"' " +
+			    	   ") " +
+
+
+			    	"SELECT jid " +
+			    	"FROM ofMucMember " +
+			    	"WHERE roomID = @roomId " +
+			    	"UNION " +
+			    	"SELECT jid FROM ofMucAffiliation " +
+			    	"WHERE roomID = @roomId ";
+	    	
+	    	Logger.Log(sql);
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	List<String> users = new ArrayList<String>();
+	    	
+	    	while(queryResult.next()) {
+	    		
+	    	    users.add( queryResult.getString("jid"));
+	    	}
+	    	
+	    	conn.close();
+	    	    	
+	    	return users;  	  	
+	    }
+
+	 public static List<DeviceToken> GetConferenceUsersTokens(String conferenceName) throws ClassNotFoundException, SQLException{
+		
+	    	Connection conn = DbConnectionManager.getConnection();
+	    	
+	    	String sql = 
+	    			
+	    		   "DECLARE @roomId nvarchar(MAX) = " + 
+		 	    	   "( " +
+			    	      "SELECT roomID "  +  
+			    	      "FROM ofMucRoom "  +
+			    	      "WHERE name = '" + conferenceName +"' " +
+			    	   ") " +
+	    	
+	    	  "SELECT * FROM devicetokens " +
+              "WHERE username IN " +
+              "("+
+		    		"SELECT SUBSTRING(jid,0,CHARINDEX('@',jid,0)) "+
+		    		"FROM ofMucMember " +
+		    		"WHERE roomID = @roomId " +
+		    		"UNION " +
+		    		"SELECT SUBSTRING(jid,0,CHARINDEX('@',jid,0)) FROM ofMucAffiliation " +
+		    		"WHERE roomID = @roomId" +
+		        ")";
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	List<DeviceToken> users = new ArrayList<DeviceToken>();
+	    	
+
+	    	while(queryResult.next()) {
+	    		DeviceToken token = new DeviceToken(queryResult.getString("devicetoken"),queryResult.getString("username"));
+	    	    users.add(token);
+	    	}
+	    	
+	    	conn.close();	
+	    	return users;  	  	
+	    }
+
+	 public static DeviceToken GetUserToken(String userName) throws ClassNotFoundException, SQLException{	
+	    	Connection conn = DbConnectionManager.getConnection();
+	    	
+	    	String sql = "SELECT * FROM devicetokens WHERE username = '" + userName + "'";
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	queryResult.next();
+	    	String token = queryResult.getString("devicetoken");
+	    
+	    	String name = queryResult.getString("username");
+	   	    	
+	    	return new DeviceToken(token,name);  	
+	    }
+	 public static List<String> GetUserConferences(String userJid) throws ClassNotFoundException, SQLException{
+      	 
+	    	Connection conn = DbConnectionManager.getConnection();
+	    	
+	    	String sql = 
+	    			
+	    		   "SELECT name FROM ofMucRoom " +
+				   "WHERE roomID IN " +
+					"( " +
+						"SELECT roomID FROM ofMucMember " +
+						"WHERE jid = '" + userJid +"' " +
+						"UNION " +
+						"SELECT roomID FROM ofMucAffiliation " +
+						"WHERE jid = '" + userJid +"'" +
+					")";
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	List<String> users = new ArrayList<String>();
+	    	
+	    	while(queryResult.next()) {
+	    		
+	    	    users.add( queryResult.getString("name") + "@conference." + JidUtilites.getServerName());
+	    	}
+	    	
+	    	conn.close();
+	    	    	
+	    	return users;  	  	
+	    }
+
+	 public static String getConferenceNickname(String conferenceJid) throws SQLException{
+		 	
+		    String result = "";
+		 
+ 	        Connection conn = DbConnectionManager.getConnection();
+	    	
+ 	        String sql = 
+			   "SELECT TOP 1 nick from ofRoster " +
+			   "WHERE jid = '" + conferenceJid + "'";
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	queryResult.next();
+	    	
+	    	result = queryResult.getString("nick");
+	    	
+	    	conn.close();	
+		 
+		    return result;
+	 }
+	 
+	 public static String getNameBy(String userName) throws SQLException{
+		 	
+		  
+		    String result = "";
+		 
+	        Connection conn = DbConnectionManager.getConnection();
+	    	
+	        String sql = 
+	        		"SELECT name from ofUser " +
+	        		"WHERE username = '" + userName + "'";
+	        
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	    	ResultSet queryResult = ps.executeQuery();
+	    	
+	    	queryResult.next();
+	    	
+	    	result = queryResult.getString("name");
+	    	
+	    	conn.close();		 
+		 
+	    	if(result == null){
+	    		return JidUtilites.removeXmppPrefix(userName);
+	    	}
+	    	
+		    return result;
+	 }
+	 
+	 public static void DeleteFromMembersRoom(String jid) throws SQLException{
+		 
+	        Connection conn = DbConnectionManager.getConnection();
+	    	
+	    	String sql = 
+	    			
+			    	"DELETE FROM ofMucAffiliation " +
+			    	"WHERE jid = '" + jid + "'" ;
+		
+
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+		
+	        ps.executeUpdate();
+	    	
+	 } 	
+}

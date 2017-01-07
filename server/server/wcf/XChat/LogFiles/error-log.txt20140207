@@ -1,0 +1,345 @@
+2014-02-07 13:06:14,150 [6308] ERROR [(null)] - ErrorUid: 9549CA28-B028-4CB4-855E-4FB770AFFF10
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.Data.Entity.Core.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.]
+   at System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.CreateObjectContextForDdlOps()
+   at System.Data.Entity.Database.Exists()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 45
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+[System.Data.Entity.Core.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.]
+   at System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+[System.Data.SqlClient.SqlException : Login failed for user 'sa'.]
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+
+                                             
+2014-02-07 13:06:57,053 [6308] ERROR [(null)] - ErrorUid: D27604AE-99CF-443D-9CA2-B9871294D50A
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Unable to determine the principal end of an association between the types 'XChat.ADM.Models.Membership' and 'XChat.ADM.Models.User'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.]
+   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.CreateObjectContextForDdlOps()
+   at System.Data.Entity.Database.Exists()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 45
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+
+                                             
+2014-02-07 13:08:59,071 [6980] ERROR [(null)] - ErrorUid: 444F03A6-5EAB-4C17-9951-718CCCDBE581
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Unable to determine the principal end of an association between the types 'XChat.ADM.Models.Membership' and 'XChat.ADM.Models.User'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.]
+   at System.Data.Entity.ModelConfiguration.Edm.Services.AssociationTypeMappingGenerator.GenerateIndependentAssociationType(AssociationType associationType, DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.ModelConfiguration.Edm.Services.DatabaseMappingGenerator.GenerateAssociationTypes(DbDatabaseMapping databaseMapping)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.CreateObjectContextForDdlOps()
+   at System.Data.Entity.Database.Exists()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 45
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+
+                                             
+2014-02-07 13:21:59,989 [6980] ERROR [(null)] - ErrorUid: C7C6D5B4-344D-42AB-80F0-B81F83E5CF8B
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Failed to set database initializer of type 'XChat.Models.DB.ProjectInitializer, XChat' for DbContext type 'XChat.Models.DB.XChatContext, XChat' specified in the application configuration. See inner exception for details.]
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+   at System.Data.Entity.Internal.InitializerConfig.<>c__DisplayClass6.<TryGetInitializerFromEntityFrameworkSection>b__1(ContextElement e)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type contextType)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetServiceFactory(Type type, String name)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetService(Type type, Object key)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Infrastructure.DependencyResolution.CompositeResolver`2.GetService(Type type, Object key)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+[System.TypeLoadException : Could not load type 'XChat.Models.DB.XChatContext' from assembly 'XChat'.]
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+
+                                             
+2014-02-07 13:25:08,433 [6980] ERROR [(null)] - ErrorUid: 8FF22ED6-5098-44D8-98E1-A4FC12F3599F
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Failed to set database initializer of type 'XChat.Models.DB.ProjectInitializer, XChat' for DbContext type 'XChat.Models.DB.XChatContext, XChat' specified in the application configuration. See inner exception for details.]
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+   at System.Data.Entity.Internal.InitializerConfig.<>c__DisplayClass6.<TryGetInitializerFromEntityFrameworkSection>b__1(ContextElement e)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type contextType)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetServiceFactory(Type type, String name)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetService(Type type, Object key)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Infrastructure.DependencyResolution.CompositeResolver`2.GetService(Type type, Object key)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+[System.TypeLoadException : Could not load type 'XChat.Models.DB.XChatContext' from assembly 'XChat'.]
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+
+                                             
+2014-02-07 13:30:34,370 [6308] ERROR [(null)] - ErrorUid: 0ECCDBD1-8F13-4B58-AF1C-C6B23B55A808
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Failed to set database initializer of type 'XChat.Models.DB.ProjectInitializer, XChat' for DbContext type 'XChat.ADM.Models.XChatContext, XChat' specified in the application configuration. See inner exception for details.]
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+   at System.Data.Entity.Internal.InitializerConfig.<>c__DisplayClass6.<TryGetInitializerFromEntityFrameworkSection>b__1(ContextElement e)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type contextType)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetServiceFactory(Type type, String name)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetService(Type type, Object key)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Infrastructure.DependencyResolution.CompositeResolver`2.GetService(Type type, Object key)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+[System.TypeLoadException : Could not load type 'XChat.ADM.Models.XChatContext' from assembly 'XChat'.]
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+
+                                             
+2014-02-07 13:36:00,198 [6980] ERROR [(null)] - ErrorUid: F2BCF3FA-9B28-4122-A0CE-18CD2B6FB275
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.InvalidOperationException : Failed to set database initializer of type 'ProjectInitializer, XChat.ADM.Models' for DbContext type 'XChatContext, XChat.ADM.Models' specified in the application configuration. See inner exception for details.]
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+   at System.Data.Entity.Internal.InitializerConfig.<>c__DisplayClass6.<TryGetInitializerFromEntityFrameworkSection>b__1(ContextElement e)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type contextType)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetServiceFactory(Type type, String name)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DependencyResolution.AppConfigDependencyResolver.GetService(Type type, Object key)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at System.Data.Entity.Infrastructure.DependencyResolution.CompositeResolver`2.GetService(Type type, Object key)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+[System.TypeLoadException : Could not load type 'XChatContext' from assembly 'XChat.ADM.Models'.]
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.Data.Entity.Internal.InitializerConfig.TryGetInitializer(Type requiredContextType, String contextTypeName, String initializerTypeName, Boolean isDisabled, Func`1 initializerArgs, Func`3 exceptionMessage)
+
+                                             
+2014-02-07 13:45:18,167 [2880] ERROR [(null)] - ErrorUid: 39ED0E69-07FB-4B28-9B02-A844D4EDA360
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.TypeInitializationException : The type initializer for 'System.Data.Entity.Internal.AppConfig' threw an exception.]
+   at System.Data.Entity.Infrastructure.DependencyResolution.DbConfigurationManager.EnsureLoadedForAssembly(Assembly assemblyHint, Type contextTypeHint)
+   at System.Data.Entity.Database.SetInitializer[TContext](IDatabaseInitializer`1 strategy)
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 22
+[System.Configuration.ConfigurationErrorsException : An error occurred creating the configuration section handler for entityFramework: Could not load file or assembly 'EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040) (D:\Work\Project Wechat\server\XChat\web.config line 9)]
+   at System.Configuration.BaseConfigurationRecord.FindAndEnsureFactoryRecord(String configKey, Boolean& isRootDeclaredHere)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Data.Entity.Internal.AppConfig..ctor()
+   at System.Data.Entity.Internal.AppConfig..cctor()
+[System.IO.FileLoadException : Could not load file or assembly 'EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)]
+   at System.Configuration.TypeUtil.GetTypeWithReflectionPermission(IInternalConfigHost host, String typeString, Boolean throwOnError)
+   at System.Configuration.RuntimeConfigurationRecord.RuntimeConfigurationFactory.Init(RuntimeConfigurationRecord configRecord, FactoryRecord factoryRecord)
+   at System.Configuration.RuntimeConfigurationRecord.RuntimeConfigurationFactory.InitWithRestrictedPermissions(RuntimeConfigurationRecord configRecord, FactoryRecord factoryRecord)
+   at System.Configuration.RuntimeConfigurationRecord.CreateSectionFactory(FactoryRecord factoryRecord)
+   at System.Configuration.BaseConfigurationRecord.FindAndEnsureFactoryRecord(String configKey, Boolean& isRootDeclaredHere)
+
+                                             
+2014-02-07 13:50:15,203 [6980] ERROR [(null)] - ErrorUid: 2503145D-4425-465B-AA9B-AE6DA32CA866
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.Data.SqlClient.SqlException : Database 'XChat4' already exists. Choose a different database name.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.SqlServer.SqlProviderServices.<>c__DisplayClass18.<CreateDatabaseFromScript>b__17(DbConnection conn)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+
+                                             
+2014-02-07 13:50:53,128 [2880] ERROR [(null)] - ErrorUid: 94B49544-1761-47DA-A9B5-FDEC3D857893
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at XChat.MvcApplication.Application_Start() in d:\Work\Project Wechat\server\XChat\Global.asax.cs:line 27
+[System.InvalidOperationException : Œ¯Ë·Í‡]
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 43
+[System.Data.SqlClient.SqlException : Database 'XChat4' already exists. Choose a different database name.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.SqlServer.SqlProviderServices.<>c__DisplayClass18.<CreateDatabaseFromScript>b__17(DbConnection conn)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   at System.Data.Entity.SqlServer.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at XChat.ADM.Models.Migrations.DatabaseInitializer.InitializeDatabase(XChatContext dataContext) in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\DatabaseInitializer.cs:line 47
+   at XChat.ADM.Models.Migrations.SimpleMembershipInitializer..ctor() in d:\Work\Project Wechat\server\XChat.ADM.Models\Migrations\SimpleMembershipInitializer.cs:line 30
+
+                                             

@@ -1,0 +1,86 @@
+﻿@using Innostar.UI.Areas.Administration.ViewModels
+@model UsersViewModel
+
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+@Html.HiddenFor(modelItem => Model.XmppAdminLogin)
+@Html.HiddenFor(modelItem => Model.XmppAdminPassword)
+@Html.HiddenFor(modelItem => Model.HttpBindAddress)
+
+@Html.Hidden("selected-template-type", 0, new { id = "selected-template-type" })
+<div style="margin-bottom: 10px; width: 100%; height:41px;">
+    <div class="pull-right" style="margin-bottom: 10px; width: 500px;">
+        <input type="search" placeholder="поиск" name="text" value="@ViewData["text"]" id="searchInput" class="form-control" style="float: left; width: 400px; height: 41px;" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary" id="searchButton">Поиск</button>
+        </span>
+    </div>
+</div>
+
+<div id="filter-menu-container">
+    <nav id="navbar-example-1" class="navbar navbar-default navbar-static user-filter-color" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand user-filter-color" href="#">Список пользователей</a>
+            </div>
+            <div class="collapse navbar-collapse ">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="filter-menu" data-type="0" class="dropdown">
+                        <button class="btn dropdown-toggle user-filter-color" name="recordinput" data-toggle="dropdown">
+                            Все
+                                <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu navbar-right user-filter-color">
+                            <li><a data-type="0" href="#">Все</a></li>
+                            <li><a data-type="1" href="#">Платные</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div id="listContainer">
+    @Html.Partial("_UsersList", Model)
+</div>
+
+
+@if (Model.MessageTemplates.Any())
+    {
+        <div id="template-menu-container" class="pull-right">
+            <nav id="navbar-example-2" class="navbar navbar-default navbar-static user-filter-color" role="navigation">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse ">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li id="template-menu" data-type="0" class="dropdown">
+                                <button class="btn dropdown-toggle user-filter-color" name="recordinput" data-toggle="dropdown">
+                                    @Model.MessageTemplates.FirstOrDefault().Text
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu navbar-right user-filter-color">
+                                    @foreach (var template in Model.MessageTemplates)
+                                    {
+                                        <li><a data-id="@template.Value" href="#">@template.Text</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+}
+    
+    @Html.TextAreaFor(modelitem => Model.Message, new { id = "MessageContainer", @style = "height : 200px; width: 1000px !important;" })
+
+<div class="form-actions">
+    <input type="button" id="MessageSender" value="Отправить" class="btn btn-primary" />
+</div>
+
+@Html.Partial("_templatePrompt")
+
+@Scripts.Render("~/bundles/usersmanagement")

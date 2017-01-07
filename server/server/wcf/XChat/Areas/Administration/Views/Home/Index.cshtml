@@ -1,0 +1,17 @@
+﻿@using System.Web.Mvc.Html
+@{
+    ViewBag.Title = "Управление данными";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+<div class="dashboard-item">
+    @Html.ActionLink("Организации", "Index", "Organizations")
+</div>
+<div class="dashboard-item">
+    @Html.ActionLink("Персоны", "Index", "Persons")
+</div>
+<div class="dashboard-item">
+    @Html.ActionLink("Проекты", "Index", "Projects")
+</div>
+<div class="dashboard-item">
+    @Html.ActionLink("Ресурсы", "Index", "Resources")
+</div>

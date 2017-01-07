@@ -1,0 +1,29 @@
+﻿/* fonts */
+
+div.jqcloud {
+	line-height: normal;
+	font-weight: 500;
+}
+
+	div.jqcloud a {
+		text-decoration: none;
+	}
+
+/* layout */
+
+div.jqcloud {
+	background-color: transparent!important;
+	background-image: none !important;
+}
+
+	div.jqcloud span {
+		padding: 0;
+	}
+
+		div.jqcloud span a {
+			color: inherit;
+		}
+
+			div.jqcloud span a:hover {
+				text-decoration: underline;
+			}

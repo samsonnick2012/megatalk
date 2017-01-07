@@ -1,0 +1,6 @@
+﻿@using System.Web.Mvc.Html
+@model XChat.Areas.Administration.ViewModels.AccountViewModels.AccountManagmentViewModel
+
+@Html.ActionLink(Model.FullName, "Management", "Account", null, new { @class = "username", title = "Manage" })
+
+

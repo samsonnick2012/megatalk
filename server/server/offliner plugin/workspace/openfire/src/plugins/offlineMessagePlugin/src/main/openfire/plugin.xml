@@ -1,0 +1,24 @@
+<plugin>
+    <!-- Main plugin class -->
+    <class>com.telexfree.offlinemessageplugin.PushOfflineMessagePlugin</class>
+
+    <!-- Plugin meta-data -->
+    <name>TelexFREE push offline message</name>
+    <description>Plugin for sending notification of offline message</description>
+    <author>ITRex Group</author>
+    <version>1.0</version>
+    <date>04/07/2014</date>
+    <minServerVersion>3.3.0</minServerVersion>
+
+    <!-- Admin console meta-data -->
+    <adminconsole>
+        <tab id="tab-users">
+            <sidebar id="sidebar-server-settings">
+                <item id="telex-offline-plugin"
+                      name="TelexFREE Offline Messages"
+                      url="push-offline-message.jsp"
+                      description="Settings for TelexFREE Offline Messages Plugin" />
+            </sidebar>
+        </tab>
+    </adminconsole>
+</plugin>

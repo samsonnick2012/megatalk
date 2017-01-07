@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuItem xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+label="" role="1">
+  <Items>
+    <MenuItem label="Пользователи чата" >
+      <Items>
+        <MenuItem label="Просмотр пользователей" url="/ChatUsers/" defaulUrlForRole="true"/>
+        <MenuItem label="Добавление пользователя" url="/ChatUsers/Create" />
+      </Items>
+    </MenuItem>   
+    <MenuItem label="Пользователи сайта">
+      <Items>
+        <MenuItem label="Просмотр пользователей" url="/UserProfiles/"/>        
+        <MenuItem label="Добавление пользователя" url="/UserProfiles/Create" />
+      </Items>
+    </MenuItem>    
+  </Items>
+</MenuItem>

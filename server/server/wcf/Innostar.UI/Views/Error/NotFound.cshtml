@@ -1,0 +1,13 @@
+﻿@model HandleErrorInfo
+
+@{
+	ViewBag.Title = "Страница не найдена";
+}
+
+<div class="content-wrapper">
+	<div class="hero-unit error-container color-shadow" style="padding: 150px; margin-top: 150px;">
+		<h1></h1>
+		<h2><b>Упс...Кажется такой страницы не существует</b></h2>
+		<h3>Мы рекомендуем @Html.ActionLink("вернуться","Index","Home") на главную страницу или если вы уверены, что она должна существовать, связаться с администратором.</h3>
+	</div>
+</div>

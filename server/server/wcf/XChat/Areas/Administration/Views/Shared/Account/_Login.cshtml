@@ -1,0 +1,14 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@if (Request.IsAuthenticated)
+{
+	<text >
+		<span>Здравствуйте, </span>
+		@Html.Action("GetUserName", "Account")
+		@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm"}))
+		{
+			@Html.AntiForgeryToken()
+			<a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+		}
+	</text>
+}

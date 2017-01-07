@@ -1,0 +1,46 @@
+package org.jivesoftware.openfire.plugin;
+
+import org.dom4j.Element;
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.jivesoftware.openfire.handler.IQHandler;
+import org.jivesoftware.openfire.pubsub.Node;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.PacketError;
+
+public class FilterIQHandler extends IQHandler {
+
+	  private IQHandlerInfo info;  
+	  
+	  public FilterIQHandler(String moduleName) {
+		  super(moduleName);  
+		  info = new IQHandlerInfo("query", "urn:xmpp:mam:tmp"); // provide a custom unique query signature for your IQ  
+	  }
+	 
+	  public void initialize(XMPPServer server) {  
+		  super.initialize(server);  
+      } 
+	  
+	  @Override
+	  public IQHandlerInfo getInfo() {
+		 return info;  
+	  }  
+
+	  // this method will handle the request. all login will go into this method. 
+	  public IQ handleIQ(IQ packet) throws UnauthorizedException{ 
+		  
+		  IQ result = IQ.createResultIQ(packet);  
+		 
+		  try {  
+			  // if you want to handle specific query. you need to check for its type. I needed this as i have wrote the plugin to provide some information to application. If you are setting some values on server side. You should use set type.  
+			  IQ.Type type = packet.getType(); 
+
+		      
+		 } catch (Exception e) {      
+			 result.setError(PacketError.Condition.bad_request);  
+		 }  
+		 
+		 return result;  
+      }
+}

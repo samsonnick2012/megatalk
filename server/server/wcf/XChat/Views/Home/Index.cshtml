@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Администрирование";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1><br/>
+                @if (!Request.IsAuthenticated)
+                {
+                    <h2>Пожалуйста, авторизуйтесь для продолжения работы</h2>
+                }
+            </hgroup>
+        </div>
+    </section>
+}
+<div style="height: 50px;"></div>
+
+<div style="height: 50px;"></div>

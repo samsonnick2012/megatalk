@@ -1,0 +1,48 @@
+﻿#button
+{
+    top:10%;
+    position: fixed;   
+    left: 0;
+    background: #7ac0db;
+    width: 33px;
+    height: 81.2%;
+    display: table;
+    }
+
+#button p {
+    color: #fff;
+    font-size: 20pt;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+.menuarrow {
+    width: 30px;
+    height: 30px;
+    }
+
+
+#button:hover {
+    
+}
+
+#s_panel 
+{    
+    top:10%;
+    position: fixed;    
+    left: -340px;
+    background: #fff;
+    width: 332px;
+    height: 80%;
+    overflow: scroll;  
+    resize:none;
+}
+
+#s_panel a
+{
+    text-decoration: none;
+    color: #6A747E;
+}
+#pmenu {
+    cursor: pointer;
+}

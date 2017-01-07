@@ -1,0 +1,66 @@
+package com.omertex.offliner.iqhandlers;
+
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.xmpp.packet.IQ;
+
+import com.omertex.offliner.common.ArchiveRestrictionType;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.services.ArchivePolicyService;
+import com.omertex.offliner.request.params.PolicyRequestParams;
+import com.omertex.offliner.utilites.Logger;
+
+public class ArchivePolicyIQHandler extends BaseIQHandler {
+
+	
+	private final ArchivePolicyService archivePolicyService;
+	 
+	public ArchivePolicyIQHandler(String moduleName) throws Exception {
+		
+		super(moduleName);
+		
+		info = new IQHandlerInfo("query", "archive:policy"); 
+		
+		archivePolicyService = new ArchivePolicyService();
+	}
+
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+     	 
+		 try 
+		 {  
+			 PolicyRequestParams params = new PolicyRequestParams(packet);
+
+			 if(!params.getRestrictionType().equals(ArchiveRestrictionType.global) && params.getJid() == null){
+				 return ErrorResponce(packet, "specifye jid");
+			 }
+			 
+			 String userJid = packet.getFrom().toBareJID().toString();
+			 
+			 ArchivePolicy policy = archivePolicyService.getPolicy(userJid);
+			 
+			 if(ArchiveRestrictionType.chat.equals(params.getRestrictionType())){
+				 
+				 policy.addChatRestriction(params.getJid(),params.getDate());
+			 }
+			 else if(ArchiveRestrictionType.conference.equals(params.getRestrictionType())){
+				 
+				 policy.addConferenceRestriction(params.getJid(),params.getDate());
+			 }
+			 else if(ArchiveRestrictionType.global.equals(params.getRestrictionType())){
+				 
+				 policy.setGlobalRestriction(params.getDate());
+			 }
+			 else{
+				return  ErrorResponce(packet, "no such restriction type exists");
+			 }
+			 
+			 archivePolicyService.Save(policy);
+			 
+			  return SuccessResponce(packet);
+			  
+		 } catch (Exception e) {
+			 Logger.Log(e.getMessage());
+			 return ErrorResponce(packet, e.getMessage());
+		 }  
+    } 
+}

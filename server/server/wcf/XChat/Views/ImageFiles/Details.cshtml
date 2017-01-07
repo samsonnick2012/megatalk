@@ -1,0 +1,20 @@
+﻿@model XChat.Models.DB.DataFile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ImageFile</legend>
+
+    <div class="display-label">FileName</div>
+    <div class="display-field">@Model.OriginalFileName</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>
+
+

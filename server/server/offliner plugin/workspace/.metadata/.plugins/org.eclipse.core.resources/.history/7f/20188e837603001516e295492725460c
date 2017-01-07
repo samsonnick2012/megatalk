@@ -1,0 +1,173 @@
+package com.omertex.offliner.utilites;
+
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import org.dom4j.tree.DefaultElement;
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.muc.MUCRole;
+import org.jivesoftware.openfire.muc.MUCRoom;
+import org.jivesoftware.openfire.muc.MultiUserChatService;
+import org.xmpp.packet.JID;
+
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+
+public class HistoryBuilder {
+	
+	HashMap<String,List<ArchiveMessage>> _conferences = new  HashMap<String,List<ArchiveMessage>>();
+	HashMap<String,List<ArchiveMessage>> _chats = new  HashMap<String,List<ArchiveMessage>>();
+	
+	public void addMessage(ArchiveMessage message){
+		
+		String to = message.getToJid();
+		if(message.isChat()){
+
+			  if(_chats.containsKey(to)){
+				 
+				  _chats.get(to).add(message);
+			  }
+			  else{
+				
+				  List<ArchiveMessage>  list = new ArrayList<ArchiveMessage>();
+				  list.add(message);
+				  
+				  _chats.put(to, list);
+			  }
+		  }
+		  else{
+
+			  if(_conferences.containsKey(to)){
+
+				  _conferences.get(to).add(message);
+			  }
+			  else{
+				  List<ArchiveMessage>  list = new ArrayList<ArchiveMessage>();
+				  list.add(message);
+				  
+				  _conferences.put(to, list);
+			  }
+		  }
+	}
+	
+	
+	private Element createConferenceMessage(ArchiveMessage message) throws DocumentException{
+    	
+		
+	    Element item = new DefaultElement("item");
+	    item.add(createNativeMessage(message));
+    	
+    	Element status = item.addElement("status");
+    	
+    	Element delivered = status.addElement("delivered");
+    	
+    	Element read = status.addElement("read");
+    	
+    	for (String jid : message.getDeliveredJids()) {
+    		delivered.addElement("jid").setText(jid);
+    	}
+    	
+    	for (String jid : message.getReadJids()) {
+    		read.addElement("jid").setText(jid);
+    	}
+    	
+    	JID conferenceJid = new JID(message.getToJid());
+    	
+    	MultiUserChatService mucService = XMPPServer.getInstance().getMultiUserChatManager().getMultiUserChatService(conferenceJid);
+    	
+    	if(mucService != null)
+    	{
+    		MUCRoom room = mucService.getChatRoom(conferenceJid.getNode());
+    		
+    		
+    		if(room != null)
+    		{
+    			Element undelivered = status.addElement("undelivered");
+    			
+    			for (JID participant : room.getOwners()) 
+    			{
+					Logger.Log(" *** jid -" + conferenceJid.toString() + "-" + participant.getNode());
+					undelivered.addElement("jid").setText(participant.getNode());
+    	    	}
+    			
+    			for (JID participant : room.getMembers()) 
+    			{
+					Logger.Log(" *** jid -" + conferenceJid.toString()+ "-" + participant.getNode());
+					undelivered.addElement("jid").setText(participant.getNode());
+    	    	}
+    		}
+    		else
+    		{
+    			Logger.Log(" *** bare-" + conferenceJid.toBareJID());
+    			Logger.Log(" *** node-" + conferenceJid.getNode());
+    			Logger.Log(" *** no room");
+    		}
+    	}
+    	else
+    	{
+    		Logger.Log(" *** no service");
+    	}	
+    	
+    	return item;
+	 }
+	
+	
+	private Element createChatMessage(ArchiveMessage message) throws DocumentException{
+	 	
+		Element original = createNativeMessage(message);
+    	 	
+		original.addAttribute("delivered",Boolean.toString(message.doesAnyDelivered()));
+    	
+		original.addAttribute("read", Boolean.toString(message.doesAnyRead()));
+		
+		return original;
+	 }
+	
+	
+	public void Build(Element container) throws DocumentException{
+		  
+		  Element conferences = container.addElement("conferences");
+		  Element chats = container.addElement("chats");
+		  
+		  for(String key : _conferences.keySet()){
+			  
+			  List<ArchiveMessage> confMessages =  _conferences.get(key);
+			  Element conference = new DefaultElement("conference").addAttribute("name", key);
+			  
+			  for(ArchiveMessage message : confMessages){
+				  
+				  conference.add(createConferenceMessage(message));
+			  }
+			  
+			  conferences.add(conference);
+		  }
+		  
+		  
+		  for(String key : _chats.keySet()){
+			  
+			  List<ArchiveMessage> chatMessages =  _chats.get(key);
+			  Element chat = new DefaultElement("chat").addAttribute("name", key);;
+			  
+			  for(ArchiveMessage message : chatMessages){
+				  
+				 chat.add(createChatMessage(message));
+			  }
+			  
+			  chats.add(chat);
+		  }
+	}
+
+	
+	private Element createNativeMessage(ArchiveMessage archiveMessage ) throws DocumentException{
+		
+		 Document originalDoc = new SAXReader().read(new StringReader(archiveMessage.getMessageXml()));
+		
+	     return originalDoc.getRootElement();	 
+	}
+}

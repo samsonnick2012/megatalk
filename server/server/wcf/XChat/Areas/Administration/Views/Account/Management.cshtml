@@ -1,0 +1,20 @@
+﻿@using System.Web.Mvc.Html
+@model XChat.Areas.Administration.ViewModels.AccountViewModels.AccountManagmentViewModel
+
+@{
+	Layout = "../Shared/_MainLayout.cshtml";
+	ViewBag.Title = "Личный кабинет";
+}
+
+<div>
+	<div style="clear: both;"></div>
+	<ul class="nav nav-tabs" id="tabs">
+		<li class="active"><a href="#info" data-toggle="pill">Управление аккаунтом</a></li>
+	</ul>
+
+	<div class="tab-content tabbable">
+		<div class="tab-pane active" id="info">
+			@Html.Partial("_ProfilePartial")
+		</div>
+	</div>
+</div>

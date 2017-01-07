@@ -1,0 +1,123 @@
+package com.omertex.offliner.mongodb.services;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import com.google.code.morphia.query.Criteria;
+import com.google.code.morphia.query.Query;
+import com.google.code.morphia.query.UpdateOperations;
+import com.omertex.offliner.common.MessageType;
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.utilites.DateUtilites;
+import com.omertex.offliner.utilites.Logger;
+
+public class ArchiveMessageService extends BaseMongoService<ArchiveMessage> {
+
+	public ArchiveMessageService() throws Exception {
+		super();
+	}
+	
+   
+    public List<ArchiveMessage> getChangedMessagesRelatedToUser(String userJid,List<String> userConferences, long from, long to){
+ 	   
+    	Query<ArchiveMessage> query = createQuery();
+    	
+    	List<String> jids = new ArrayList<String>(userConferences);
+    	
+    	jids.add(userJid);
+
+    	query.and(
+    			query.criteria("lastUpdated").greaterThanOrEq(from),
+    			query.criteria("lastUpdated").lessThanOrEq(to),
+    			query.or(
+						  createQuery().criteria("fromJid").equal(userJid),
+						  createQuery().criteria("toJid").hasAnyOf(jids)
+						),
+				query.criteria("messageType").notEqual(MessageType.system)
+		);
+    	
+    	return find(query).asList();
+    }
+    
+    public List<ArchiveMessage> getChangedMessagesRelatedToUser(String userJid, long globalRestriction, List<String> userConferences, long from) {
+  	   
+    	Query<ArchiveMessage> query = createQuery();
+    	
+    	List<String> jids = new ArrayList<String>(userConferences);
+    	
+    	jids.add(userJid);
+
+    	query.and(
+    			query.criteria("sentDate").lessThanOrEq(globalRestriction),	
+    			query.criteria("lastUpdated").greaterThanOrEq(from),	
+    			query.or(
+  						  createQuery().criteria("fromJid").equal(userJid),
+  						  createQuery().criteria("toJid").hasAnyOf(jids)
+  						),
+  				query.criteria("messageType").notEqual(MessageType.system)
+		);
+    	
+    	return find(query).asList();
+    }
+     
+    public long CountUnread(String userJid, List<String> userConferences){
+   
+    	Query<ArchiveMessage> query = createQuery();
+    	
+    	List<Criteria> orList = new ArrayList<Criteria>();
+    	
+    	// for chats
+    	orList.add(createQuery().criteria("toJid").equal(userJid));
+    	
+    	if(userConferences.size() > 0){
+    		orList.add(createQuery().criteria("toJid").hasAnyOf(userConferences));
+    	}
+    	
+    	Criteria []orArray = new Criteria[orList.size()];
+    	orList.toArray(orArray);
+
+		query.and(
+				query.or(orArray),
+				query.criteria("readJids").hasNoneOf(Arrays.asList(userJid)),
+				query.criteria("fromJid").notEqual(userJid),
+				query.criteria("messageType").notEqual(MessageType.system)
+		);
+		
+		Logger.Log(query.toString());
+		
+		return Count(query);
+    }
+	
+	public void AddReadJid(String readJid, long messageTimeStamp){
+		
+		Logger.Log("AddReadJid - " + readJid + " for timestamp = " + String.valueOf(messageTimeStamp));
+		UpdateOperations<ArchiveMessage> ops = createUpdateOperations()
+				.add("readJids", readJid)
+				.set("lastUpdated", DateUtilites.getTimestamp());;
+		
+		Query<ArchiveMessage> updateQuery = createQuery().field("sentDate").equal(messageTimeStamp);
+		
+		Update(updateQuery,ops);
+	}
+	
+	public void AddDeliveredJid(String deliveredJid, long messageTimeStamp){
+		
+		UpdateOperations<ArchiveMessage> ops = createUpdateOperations()
+				.add("deliveredJids", deliveredJid)
+				.set("lastUpdated", DateUtilites.getTimestamp());
+		
+		
+		Query<ArchiveMessage> updateQuery = createQuery().field("sentDate").equal(messageTimeStamp);
+		
+		Update(updateQuery,ops);
+	}
+	
+	protected Class getGenericClass(){
+		return ArchiveMessage.class;
+	}
+
+	
+}

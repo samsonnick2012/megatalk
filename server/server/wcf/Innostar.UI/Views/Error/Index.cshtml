@@ -1,0 +1,16 @@
+﻿@model HandleErrorInfo
+
+@{
+	ViewBag.Title = "Ошибка сервера";
+}
+
+<div class="content-wrapper">
+	<div class="hero-unit error-container color-shadow" style="padding: 150px; margin-top: 150px;">
+		<h1>Ошибка</h1>
+		<br>
+		<p>При выполнение запроса произошла ошибка.</p>
+		<p>Для решения проблемы свяжитесь с администрацией сайта.</p>
+		<p>ID ошибки : <b class="text-error">@ViewData["GUIDError"]</b></p>
+		<p>@Html.ActionLink("Вернуться","Index","Home") на главную.</p>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+﻿@using Application.Core.UI.HtmlHelpers
+<!DOCTYPE html>
+<html lang="@System.Threading.Thread.CurrentThread.CurrentCulture">
+<head>
+	<meta charset="utf-8" />
+	<title>MegaTalk: Панель администрирования | @ViewBag.Title</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width" />
+	@Html.MetaAcceptLanguage()
+
+	@Styles.Render("~/Content/bootstrap/base")
+	@Styles.Render("~/Content/adminstyles")
+
+	@RenderSection("css", false)
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryxmpp")
+	@Scripts.Render("~/bundles/globalize")
+	@Scripts.Render("~/bundles/jQueryExtensions")
+	@Scripts.Render("~/bundles/shared")
+	@Scripts.Render("~/bundles/bootstrap")
+	@Scripts.Render("~/bundles/typeahead")
+	@Scripts.Render("~/bundles/purl")
+	@Scripts.Render("~/bundles/spin")        
+
+    @RenderSection("headScripts", false)
+
+</head>
+<body>
+	<header>
+		@RenderSection("navbar", false)
+		<div class="clear-fix"></div>
+	</header>
+	<div id="body">
+		@RenderSection("scripts", false)
+		<div class="content-wrapper">
+			@RenderBody()
+		</div>
+	</div>
+	<footer>
+		<div class="content-wrapper">
+			<div class="float-left">
+				<p>&copy; @DateTime.Now.Year - MegaTalk: Панель администрирования</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

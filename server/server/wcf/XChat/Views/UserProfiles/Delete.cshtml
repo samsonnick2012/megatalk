@@ -1,0 +1,61 @@
+﻿@using XChat.Helpers
+@model XChat.Models.DB.UserProfile
+
+@{
+    ViewBag.Title = "Удаление пользователя";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Вы уверены что хотите удалить этого пользователя?</h3>
+<fieldset>
+    <legend>UserProfile</legend>
+
+    <div class="display-label">@Html.LabelFor(model => model.UserName)</div>
+    <div class="display-field">@Model.UserName</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.Email)</div>
+    <div class="display-field">@Model.Email</div>
+    
+    <div class="display-label">@Html.LabelFor(model => model.AssignedRoles)</div>
+    <div class="display-field">
+        @if (Model.AssignedRoles.Any())
+            {
+                @Model.AssignedRoles.Select(Helper.LocalizeRole).Aggregate((s, s1) => s + "," + s1)
+            }
+    </div>
+
+    <div class="display-label">@Html.LabelFor(model => model.FirstName)</div>
+    <div class="display-field">@Model.FirstName</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.LastName)</div>
+    <div class="display-field">@Model.LastName</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.Gender)</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Gender).ToString()</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.Country)</div>
+    <div class="display-field">@Model.Country</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.City)</div>
+    <div class="display-field">@Model.City</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.ContactData)</div>
+    <div class="display-field">@Model.ContactData</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.Image)</div>
+    <div class="display-field">
+        @if (Model.Image != null)
+        {
+            @:<img src="@Model.Image.Url" width="50"  /><br/>
+        }
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>
+}
+
+

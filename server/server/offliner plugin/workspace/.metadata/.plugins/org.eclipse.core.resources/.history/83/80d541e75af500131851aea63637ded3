@@ -1,0 +1,58 @@
+package com.shephertz.app42.sdk.test;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+
+import com.shephertz.app42.paas.sdk.java.App42BadParameterException;
+import com.shephertz.app42.paas.sdk.java.App42Exception;
+import com.shephertz.app42.paas.sdk.java.App42SecurityException;
+import com.shephertz.app42.paas.sdk.java.ServiceAPI;
+import com.shephertz.app42.paas.sdk.java.push.DeviceType;
+import com.shephertz.app42.paas.sdk.java.push.PushNotification;
+import com.shephertz.app42.paas.sdk.java.push.PushNotificationService;
+
+
+
+public class UserServiceSample {
+	
+	/**
+	 * Main Method To Create App42 User on Cloud
+	 * @param args
+	 * @throws UnsupportedEncodingException 
+	 */
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		createUser();
+		
+		//System.out.println("здрасте # здрасте".replace("#", "blax"));
+	}
+	
+	/**
+	 * Test Method for creating the User in App42 Cloud. 
+	 * @throws UnsupportedEncodingException 
+	 */
+	public static void createUser() throws UnsupportedEncodingException {
+	
+		try {
+			
+			String userName = "xmpp_user321";  
+		
+	        String message = "Пользователь 11 добавил вас в друзья";  
+		
+	
+			  
+			ServiceAPI api = new ServiceAPI("7db8952c0cab1affc363e55cf5335fe3788154b28643b2b48dca2b251852bdd8","cef22930233681f6536a0bf57d407cb78ba1b8b0d6af9c28bd206ee208e8a6ae");
+			PushNotificationService pushnotificationService = api.buildPushNotificationService();    
+			HashMap<String, String> otherMetaHeaders = new HashMap<String, String>();  
+			otherMetaHeaders.put("dataEncoding", "true");  
+			pushnotificationService.setOtherMetaHeaders(otherMetaHeaders) ;
+			  
+		pushnotificationService.sendPushMessageToUser(userName,message);      
+		} catch (App42Exception ex) {
+			System.out.println("App42Exception ");
+			System.out.println(ex.getMessage());
+		}
+
+	}
+
+}

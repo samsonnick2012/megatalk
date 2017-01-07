@@ -1,0 +1,28 @@
+package org.jivesoftware.openfire.plugin.handlers;
+
+import java.sql.SQLException;
+
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.plugin.Helper;
+import org.jivesoftware.openfire.plugin.data.SqlAccess;
+import org.xmpp.packet.IQ;
+
+public class ConferenceAcceptorIQHandler extends BaseAcceptorIQHandler {  
+
+    public ConferenceAcceptorIQHandler(String moduleName, String namespace)  
+    {  
+		  super(moduleName);  
+		  info = new IQHandlerInfo("query", namespace); 
+    }  
+      
+    
+    @Override
+    protected String[] GetReceiverNames(IQ request) throws ClassNotFoundException, SQLException{  	
+    	return SqlAccess.GetConferenceUsers(request.getTo().toString());
+    } 
+      
+    public void initialize(XMPPServer server) {  
+    	super.initialize(server);  
+    }      
+}  

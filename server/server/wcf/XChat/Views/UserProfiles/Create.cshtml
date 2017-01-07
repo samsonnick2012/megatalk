@@ -1,0 +1,39 @@
+﻿@model XChat.Models.DB.UserProfile
+
+@{
+    ViewBag.Title = "Создание пользователя";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "UserProfiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>UserProfile</legend>
+
+		@Html.Partial("_CreateOrEdit", Model)
+        
+<div class="editor-label">
+    @Html.LabelFor(m => m.Password)
+</div>
+<div class="editor-field">
+    @Html.PasswordFor(m => m.Password)
+</div>    
+<div class="editor-label">
+    @Html.LabelFor(m => m.ConfirmPassword)
+</div>
+<div class="editor-field">
+    @Html.PasswordFor(m => m.ConfirmPassword)
+</div> 
+        <p>
+            <input type="submit" value="Создать" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+

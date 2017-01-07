@@ -1,0 +1,67 @@
+﻿@using XChat.Models.ViewModels
+@model XChat.Models.DB.UserProfile
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.UserName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.UserName)
+    @Html.ValidationMessageFor(model => model.UserName)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.Email)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Phone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Phone)
+    @Html.ValidationMessageFor(model => model.Phone)
+</div>
+
+<div class="editor-label">
+    Роли в системе
+</div>
+<div class="editor-field">
+    <table style="width: 100%">
+        <tr>
+        @{
+            int cnt = 0;
+            List<AssignedData> roles = ViewBag.UserRoles;
+
+            foreach (var role in roles) {
+                if (cnt++ % 3 == 0) {
+                    @:  </tr> <tr> 
+                }
+                @: <td> 
+                <input type="checkbox" 
+                       name="selectedRoles" 
+                       value="@role.Uid" 
+                    @(Html.Raw(role.Assigned ? "checked=\"checked\"" : "")) /> 
+                    @role.Title
+                @:</td>
+            }
+            @: </tr>
+        }
+    </table>
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Image)
+</div>
+<div class="editor-field">
+    @if (Model.Image != null)
+    {
+        @:<img src="@Model.Image.Url" width="100"  /><br/>
+    }
+    @Html.HiddenFor(model => model.ImageId)
+    @Html.TextBoxFor(model => model.ImageFile, new { type = "file" })
+    @Html.ValidationMessageFor(model => model.ImageFile)
+</div>

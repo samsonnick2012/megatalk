@@ -1,0 +1,60 @@
+﻿@using XChat.Helpers
+@model IEnumerable<XChat.Models.DB.UserProfile>
+
+@{
+    ViewBag.Title = "Пользователи";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Создать нового", "Create")
+</p>
+<table class="elibTable">
+    <tr>
+        <th></th>
+        <th>
+            Логин
+        </th>
+        <th>
+            Почта
+        </th>
+        <th>
+            Роли
+        </th>
+        <th>
+            Фото
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Просмотр", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.UserName
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+			@if (item.AssignedRoles.Any())
+            {
+                @item.AssignedRoles.Select(Helper.LocalizeRole).Aggregate((s, s1) => s + "," + s1);
+            }
+        </td>
+        <td>
+			@if (item.Image != null)
+            {
+                @:<img src="@item.Image.Url" width="50"  /><br/>
+            }
+        </td>
+    </tr>
+}
+
+</table>
+
+

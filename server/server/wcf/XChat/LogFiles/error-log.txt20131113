@@ -1,0 +1,505 @@
+2013-11-13 12:32:57,749 [10156] ERROR [(null)] - ErrorUid: AC2AD595-D979-472C-80C4-43CCC7159799
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 12:33:47,652 [3216] ERROR [(null)] - ErrorUid: 726FC980-D653-446B-A359-1FAE27E69425
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 12:34:44,682 [3216] ERROR [(null)] - ErrorUid: C25F3A55-85EA-4B54-95EA-2EDC2EA242A2
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:21:30,579 [3164] ERROR [(null)] - ErrorUid: D713C19B-3EBE-42AC-84F1-D4584B764914
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:22:23,263 [9804] ERROR [(null)] - ErrorUid: 11DAFF97-1252-4979-ADC2-20D8F4429D2B
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:22:36,551 [9804] ERROR [(null)] - ErrorUid: C246E62F-FA73-4614-956C-5ED5C3D10526
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:22:55,702 [11476] ERROR [(null)] - ErrorUid: 6867186C-E228-44A6-A1B0-754F6833FB5A
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:25:42,920 [11476] ERROR [(null)] - ErrorUid: EA0C28D7-17E6-4C88-86DB-9176E89C098A
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:27:25,013 [11476] ERROR [(null)] - ErrorUid: 6A6E65FF-3358-40FE-94B1-FF1BFBC8ECDE
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:29:14,027 [11476] ERROR [(null)] - ErrorUid: 62FFD038-B774-4993-83E4-49D1B80CE092
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:36:33,524 [11476] ERROR [(null)] - ErrorUid: A0730D9A-6663-45A1-BA24-FEEF4CC86CF8
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:37:01,101 [11476] ERROR [(null)] - ErrorUid: DEB52BE4-C565-428D-BFEB-7E60657DD5A0
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.Entity.Migrations.Infrastructure.AutomaticDataLossException : Automatic migration was not applied because it would result in data loss.]
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:37:46,832 [2044] ERROR [(null)] - ErrorUid: 8A7C58A5-E83B-4768-A053-DF324C8B7526
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.SqlClient.SqlException : Either the parameter @objname is ambiguous or the claimed @objtype (COLUMN) is wrong.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(DbTransaction transaction, MigrationStatement migrationStatement)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 13:54:26,611 [7464] ERROR [(null)] - ErrorUid: DD2F5972-BCD9-45C5-9382-6CC421D26590
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.SqlClient.SqlException : 'FK_dbo.UnitBundles_dbo.UnitKinds_KindId' is not a constraint.
+Could not drop constraint. See previous errors.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(DbTransaction transaction, MigrationStatement migrationStatement)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 14:03:52,510 [5284] ERROR [(null)] - ErrorUid: 6EF24935-2CE0-4C51-B181-AE0C95E90691
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.SqlClient.SqlException : 'FK_dbo.UnitBundles_dbo.UnitKinds_KindId' is not a constraint.
+Could not drop constraint. See previous errors.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(DbTransaction transaction, MigrationStatement migrationStatement)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 14:06:04,572 [7464] ERROR [(null)] - ErrorUid: 26E0194E-4CB5-4C40-9996-42C7B5CA2B70
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.SqlClient.SqlException : 'FK_dbo.UnitBundles_dbo.UnitKinds_KindId' is not a constraint.
+Could not drop constraint. See previous errors.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(DbTransaction transaction, MigrationStatement migrationStatement)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 14:07:19,173 [7464] ERROR [(null)] - ErrorUid: 285C67F5-EC3A-4CAD-BB91-015B4185A4DB
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Masha\Backend\XChat\Global.asax.cs:line 32
+[System.Data.SqlClient.SqlException : 'FK_dbo.UnitBundles_dbo.UnitKinds_KindId' is not a constraint.
+Could not drop constraint. See previous errors.]
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteSql(DbTransaction transaction, MigrationStatement migrationStatement)
+   at System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   at System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, XDocument sourceModel, XDocument targetModel, Boolean downgrading)
+   at System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   at System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Masha\Backend\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-13 19:36:37,123 [9576] ERROR [(null)] - ErrorUid: 1BCF053B-9C7D-4612-B1E5-B371671FF4B4
+                                             [System.InvalidOperationException : Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.]
+   at System.Web.Mvc.ModelMetadata.FromLambdaExpression[TParameter,TValue](Expression`1 expression, ViewDataDictionary`1 viewData, ModelMetadataProvider metadataProvider)
+   at System.Web.Mvc.Html.SelectExtensions.DropDownListFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IEnumerable`1 selectList, String optionLabel, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.SelectExtensions.DropDownListFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IEnumerable`1 selectList)
+   at ASP._Page_Views_UnitBundles__CreateOrEdit_cshtml.Execute() in d:\Work\Masha\Backend\XChat\Views\UnitBundles\_CreateOrEdit.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_UnitBundles_Edit_cshtml.Execute() in d:\Work\Masha\Backend\XChat\Views\UnitBundles\Edit.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2013-11-13 20:02:09,725 [5656] ERROR [(null)] - ErrorUid: E7B94E5A-3DC1-46AB-B2A9-F6DBACB1B4C2
+                                             [System.Web.HttpException : DataBinding: 'XChat.Helpers.EnumItem' does not contain a property with the name 'Value'.]
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.Mvc.MultiSelectList.<GetListItemsWithValueField>b__3(Object item)
+   at System.Linq.Enumerable.<>c__DisplayClass12`3.<CombineSelectors>b__11(TSource x)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at System.Web.Mvc.MultiSelectList.GetListItemsWithValueField()
+   at System.Web.Mvc.MultiSelectList.GetEnumerator()
+   at System.Web.Mvc.Html.SelectExtensions.GetSelectListWithDefaultValue(IEnumerable`1 selectList, Object defaultValue, Boolean allowMultiple)
+   at System.Web.Mvc.Html.SelectExtensions.SelectInternal(HtmlHelper htmlHelper, ModelMetadata metadata, String optionLabel, String name, IEnumerable`1 selectList, Boolean allowMultiple, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.SelectExtensions.DropDownListFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IEnumerable`1 selectList, String optionLabel, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.SelectExtensions.DropDownListFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IEnumerable`1 selectList)
+   at ASP._Page_Views_UnitBundles__CreateOrEdit_cshtml.Execute() in d:\Work\Masha\Backend\XChat\Views\UnitBundles\_CreateOrEdit.cshtml:line 40
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_UnitBundles_Edit_cshtml.Execute() in d:\Work\Masha\Backend\XChat\Views\UnitBundles\Edit.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             
+2013-11-13 20:03:30,818 [11564] ERROR [(null)] - ErrorUid: C559FAA7-3E9F-4EFF-9783-998D08585394
+                                             [System.InvalidOperationException : A specified Include path is not valid. The EntityType 'XChat.Models.DB.UnitBundle' does not declare a navigation property with the name 'BundleKind'.]
+   at System.Data.Objects.Internal.ObjectFullSpanRewriter.ConvertSpanPath(SpanPathInfo parentInfo, List`1 navPropNames, Int32 pos)
+   at System.Data.Objects.Internal.ObjectFullSpanRewriter..ctor(DbCommandTree tree, DbExpression toRewrite, Span span, AliasGenerator aliasGenerator)
+   at System.Data.Objects.Internal.ObjectSpanRewriter.TryRewrite(DbQueryCommandTree tree, Span span, MergeOption mergeOption, AliasGenerator aliasGenerator, DbExpression& newQuery, SpanIndex& spanInfo)
+   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Span span, ReadOnlyCollection`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Objects.EntitySqlQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at ASP._Page_Views_UnitBundles_Index_cshtml.Execute() in d:\Work\Masha\Backend\XChat\Views\UnitBundles\Index.cshtml:line 41
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             

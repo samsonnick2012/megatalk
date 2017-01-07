@@ -1,0 +1,92 @@
+package org.jivesoftware.openfire.plugin.handlers;
+
+import java.sql.SQLException;
+
+import org.dom4j.Element;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.jivesoftware.openfire.plugin.AcceptorActionType;
+import org.jivesoftware.openfire.plugin.Helper;
+import org.jivesoftware.openfire.plugin.data.SqlAccess;
+import org.jivesoftware.openfire.plugin.params.BaseAcceptorParams;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.Presence;
+
+public class BaseAcceptorIQHandler extends BaseIQHandler {
+
+	public BaseAcceptorIQHandler(String moduleName) {
+		super(moduleName);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+	    	
+	    	try {  
+				  // if you want to handle specific query. you need to check for its type. I needed this as i have wrote the plugin to provide some information to application. If you are setting some values on server side. You should use set type.  
+				  IQ.Type type = packet.getType();   
+
+	 
+				  if (type.equals(IQ.Type.set)) 
+				  {  	
+					  UpdateStatus(packet);
+		
+					  for(String username : GetReceiverNames(packet)){
+						  SendAcceptResponce(packet, username + "@" + GetServerName());					 
+					  }
+					  					
+					  return SuccessResponce(packet);
+				  }
+				  else {  
+				      return WrongTypeResponce(packet);  
+				  }  
+			     
+			 }catch (Exception e){  
+
+				  return ErrorResponce(packet, e.getMessage()); 
+			 }   	    	
+	    }  
+	
+    protected String[] GetReceiverNames(IQ request) throws ClassNotFoundException, SQLException{
+    	return new String[]{};
+    }
+    
+    
+	protected void SendAcceptResponce(IQ requestPacket, String receiverJid){
+		
+		Presence responce = new Presence();
+		
+		Element body = responce.getElement();
+		
+		Element query = requestPacket.getChildElement().createCopy();
+		query.element("params")
+		.addElement("param")
+		   .addAttribute("key", "jid")
+		   .addAttribute("value", requestPacket.getFrom().toString());
+		
+		body.add(query);
+		
+		responce.setTo(receiverJid);
+		
+		Route(responce);	
+	}
+
+	public AcceptorActionType GetAcceptorType(){
+	    String[] namespaceParts = info.getNamespace().split(":");
+	    return AcceptorActionType.valueOf(namespaceParts[namespaceParts.length - 1].toUpperCase());
+	}
+	
+	protected void UpdateStatus(IQ request) throws NumberFormatException, ClassNotFoundException, SQLException{
+		
+		BaseAcceptorParams params = Helper.GetBaseAcceptorParams(request);
+    	String timestamp = params.Timestamp;
+    	String to = params.Jid;
+    	String from = request.getFrom().toBareJID().toString();
+    	
+    	Helper.RightToFile("timestamp = " + timestamp + " to = " + to + " from = " + from);
+    	
+    	switch(GetAcceptorType()){
+    		case READ:   SqlAccess.UpdateReadStatus(from, to, Long.parseLong(timestamp));Helper.RightToFile("UpdateReadStatus");break;
+    		case DELIVERED:   SqlAccess.UpdateDeliveredStatus(from, to, Long.parseLong(timestamp));Helper.RightToFile("UpdateDeliveredStatus");break;
+    	}
+	}
+}

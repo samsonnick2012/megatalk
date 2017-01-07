@@ -1,0 +1,116 @@
+package com.omertex.offliner.interceptors;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.jivesoftware.openfire.interceptor.PacketRejectedException;
+import org.jivesoftware.openfire.session.Session;
+import org.xmpp.packet.Message;
+import org.xmpp.packet.Packet;
+
+import com.omertex.offliner.common.MessageType;
+import com.omertex.offliner.mobile.IMobileSender;
+import com.omertex.offliner.mobile.MobileHelper;
+import com.omertex.offliner.mobile.MobileSender;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.services.ArchiveMessageService;
+import com.omertex.offliner.mongodb.services.ArchivePolicyService;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.JidUtilites;
+import com.omertex.offliner.utilites.Logger;
+import com.omertex.offliner.utilites.MessageParametrsHelper;
+
+public class MobileInterceptor extends BaseInterceptor {
+
+	private IMobileSender mobileSender;	
+	private  ArchiveMessageService archiveMessageService;
+	
+	
+	public MobileInterceptor(int order) throws Exception{
+		
+		super(order,"push");
+		
+		mobileSender = new  MobileSender();
+		
+		archiveMessageService = new ArchiveMessageService();
+
+	}
+	
+	
+	public void interceptPacket(Packet packet, Session session,
+			boolean incoming, boolean processed) throws PacketRejectedException {
+		
+       if(incoming && (!processed) && shouldProcessed(packet)){
+			
+			try{
+				
+				Message message = (Message)packet;
+
+				String from = MessageParametrsHelper.getFrom(message);
+				String to = MessageParametrsHelper.getTo(message);
+				
+				String senderUserName = JidUtilites.jidToUserName(from);
+				String receiverUserName = JidUtilites.jidToUserName(to);	
+				
+				String messageType = MessageParametrsHelper.getMessageType(message);
+				
+				if(MessageType.system.equals(messageType)){
+
+					String specificText = MobileHelper.getTextForSpecificTagIfPacketContainsIt(packet);
+					String senderDisplayedUserName = JidUtilites.removeXmppPrefix(senderUserName);
+					
+					sendSpecificNotification(specificText,senderDisplayedUserName,receiverUserName);
+					
+					return;
+				}
+				
+				
+				if(JidUtilites.isConferenceJid(to)){
+					
+					for(String conferenceUserJid: OpenfireDataHelper.GetConferenceUsersJids(JidUtilites.jidToConferenceName(to))){
+						
+						String displayName = OpenfireDataHelper.getConferenceNickname(to) + "-" + OpenfireDataHelper.getNameBy(JidUtilites.jidToUserName(conferenceUserJid));
+						
+						sendNotification(conferenceUserJid,displayName,to);
+					}
+				}
+				else{
+			
+					sendNotification(to,from,from);
+				}							
+				
+			}
+			catch(Exception ex){
+				Logger.Log(ex.getMessage());
+			}
+			
+		}
+	}
+	
+	
+	private void sendSpecificNotification(String text, String senderUserName, String receiverUserName){
+		
+		if(text != null){
+			
+			text = text.replace("#", senderUserName);
+			
+			mobileSender.send(text, receiverUserName);
+		
+			return;
+		}
+	}
+	
+	
+	private void sendNotification(String toJid,String displayName, String fromJid) throws Exception{
+		
+		ArchivePolicy policy = new ArchivePolicyService().getPolicy(toJid);
+		long badge = archiveMessageService.CountUnreadUsingNativeDriver(toJid, OpenfireDataHelper.GetUserConferences(toJid),policy);
+			
+		String receiverUserName = JidUtilites.jidToUserName(toJid);		
+		String senderDisplayName = JidUtilites.removeXmppPrefix(JidUtilites.jidToUserName(displayName));
+		
+		String pushMessage = MobileHelper.createIosNotification(senderDisplayName,"default",fromJid,String.valueOf(badge));
+	
+		mobileSender.send(pushMessage, receiverUserName);		
+	}		
+}

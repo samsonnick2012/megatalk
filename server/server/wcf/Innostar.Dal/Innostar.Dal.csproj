@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2A97690-8315-48C2-92ED-03502DE5ADDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Innostar.Dal</RootNamespace>
+    <AssemblyName>Innostar.Dal</AssemblyName>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\DatabaseInitializer.cs" />
+    <Compile Include="Infrastructure\EntityTypeConfigurations\MembershipTypeConfiguration.cs" />
+    <Compile Include="Infrastructure\EntityTypeConfigurations\NotificationTypeConfiguration.cs" />
+    <Compile Include="Infrastructure\EntityTypeConfigurations\OAuthMembershipTypeConfiguration.cs" />
+    <Compile Include="Infrastructure\EntityTypeConfigurations\RoleTypeConfiguration.cs" />
+    <Compile Include="Infrastructure\EntityTypeConfigurations\UserTypeConfiguration.cs" />
+    <Compile Include="Infrastructure\InnostarModelsContext.cs" />
+    <Compile Include="Infrastructure\InnostarModelsContext.Views.cs" />
+    <Compile Include="Infrastructure\InnostarModelsContext.Views1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InnostarModelsContext.Views.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AudioPieceRepository.cs" />
+    <Compile Include="Repositories\ChatUserRepository.cs" />
+    <Compile Include="Repositories\ConferenceConfigurationRepository.cs" />
+    <Compile Include="Repositories\ConfirmEmailRequestRepository.cs" />
+    <Compile Include="Repositories\DataFileRepository.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
+    <Compile Include="Repositories\IChatUserRepository.cs" />
+    <Compile Include="Repositories\IConfirmEmailRequestRepository.cs" />
+    <Compile Include="Repositories\IDataFileRepository.cs" />
+    <Compile Include="Repositories\IMessageTemplateRepository.cs" />
+    <Compile Include="Repositories\InnostarRepositoriesContainer.cs" />
+    <Compile Include="Repositories\IRecoverPasswordRequestRepository.cs" />
+    <Compile Include="Repositories\IRoomKeyRepository.cs" />
+    <Compile Include="Repositories\IUserProfileRepository.cs" />
+    <Compile Include="Repositories\IUserTokenRepository.cs" />
+    <Compile Include="Repositories\MessageTemplateRepository.cs" />
+    <Compile Include="Repositories\RecoverPasswordRequestRepository.cs" />
+    <Compile Include="Repositories\RoomKeyRepository.cs" />
+    <Compile Include="Repositories\UserProfileRepository.cs" />
+    <Compile Include="Repositories\UserTokenRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Infrastructure\InnostarModelsContext.Views.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>InnostarModelsContext.Views1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
+      <Project>{BEF80B10-19FD-4AF0-AF89-85F319C9B921}</Project>
+      <Name>Application.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Innostar.Models\Innostar.Models.csproj">
+      <Project>{58946067-8CC5-4A7F-A811-51B36278EE86}</Project>
+      <Name>Innostar.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

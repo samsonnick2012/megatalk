@@ -1,0 +1,47 @@
+@model XChat.Models.DB.ChatUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ChatUser</legend>
+
+    <div class="display-label">Login</div>
+    <div class="display-field">@Model.Login</div>
+
+    <div class="display-label">XmppLogin</div>
+    <div class="display-field">@Model.XmppLogin</div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Phone</div>
+    <div class="display-field">@Model.Phone</div>
+
+    <div class="display-label">Disabled</div>
+    <div class="display-field">@Model.Disabled</div>
+
+    <div class="display-label">PasswordHash</div>
+    <div class="display-field">@Model.PasswordHash</div>
+
+    <div class="display-label">PasswordSalt</div>
+    <div class="display-field">@Model.PasswordSalt</div>
+
+    <div class="display-label">Image</div>
+    <div class="display-field">@(Model.Image == null ? "None" : Model.Image.FileName)</div>
+
+    <div class="display-label">ImageFile</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.ImageFile).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

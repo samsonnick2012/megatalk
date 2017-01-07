@@ -1,0 +1,45 @@
+package com.omertex.offliner.iqhandlers;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.XMPPServer;
+import org.xmpp.packet.IQ;
+
+import com.omertex.offliner.utilites.Helper;
+import com.omertex.offliner.utilites.Logger;
+import com.omertex.offliner.utilites.PacketParametrsExtractor;
+
+public class ChatAcceptorIQHandler extends BaseAcceptorIQHandler {  
+
+    public ChatAcceptorIQHandler(String moduleName, String namespace) throws Exception  
+    {  
+		  super(moduleName);  
+		  info = new IQHandlerInfo("query", namespace); 
+    }  
+    
+    @Override
+    protected List<String> GetReceiverNames(IQ request) throws ClassNotFoundException, SQLException{ 
+    	
+    	Logger.Log("GetReceiverNames");
+    	Logger.Log(request.getElement());
+    	
+    	String jid = PacketParametrsExtractor.getParam(request,"jid");
+    	
+    	Logger.Log(jid);
+    	ArrayList<String> names = new ArrayList<String>();
+    	Logger.Log("BEFORE FAIL");
+    	Logger.Log(String.valueOf(names.size()));
+    	names.add(Helper.jidToUserName(jid));
+    	
+    	Logger.Log("GetReceiverNames END");
+    	
+		return names;
+    }
+      
+    public void initialize(XMPPServer server) {  
+    	super.initialize(server);  
+    }      
+}  

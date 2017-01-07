@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Управление данными";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+<div>
+    <div class="dashboard-item">
+        @Html.ActionLink("Пользователи", "Index", "Users")
+    </div>
+    <div class="dashboard-item">
+        @Html.ActionLink("Cтатистика", "Index", "Statistics")
+    </div>
+    <div class="dashboard-item">
+        @Html.ActionLink("Лог ошибок", "Index", "ErrorLog")
+    </div>
+    <div class="dashboard-item">
+        @Html.ActionLink("Шаблоны", "Index", "MessageTemplate")
+    </div>
+</div>

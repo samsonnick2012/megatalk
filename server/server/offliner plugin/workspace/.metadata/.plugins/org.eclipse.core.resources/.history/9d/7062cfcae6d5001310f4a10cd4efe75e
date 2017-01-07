@@ -1,0 +1,97 @@
+package org.jivesoftware.openfire.plugin;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.jivesoftware.openfire.plugin.params.ConferenceMessagesParams;
+import org.jivesoftware.openfire.plugin.params.MessageDeliveredAcceptorParams;
+import org.xmpp.packet.Packet;
+
+public class Helper {
+	
+	public static void RightToFile(String message){
+		Writer writer = null;
+
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+			          new FileOutputStream(new File("C:\\filename.txt"),true), "utf-8"));
+		    writer.write(message + "   ");
+		    writer.write(System.getProperty( "line.separator" ));
+		} catch (IOException ex) {
+		  // report
+		} finally {
+		   try {writer.close();} catch (Exception ex) {}
+		}
+	}
+	
+	public static void RightToFileXML(Element element){
+		Writer writer = null;
+
+		try {
+			writer = new BufferedWriter(new OutputStreamWriter(
+			          new FileOutputStream(new File("C:\\xml.txt"),true), "utf-8"));
+		    writer.write(System.getProperty( "line.separator" ));
+		    element.write(writer);
+		} catch (IOException ex) {
+		  // report
+		} finally {
+		   try {writer.close();} catch (Exception ex) {}
+		}
+	}
+
+    public static HashMap<String, String> ExtractParametrs(Packet packet){
+    	
+    	HashMap<String, String> result  = new HashMap<String, String>();
+    	
+    	Element packetBody = packet.getElement();
+    	
+    	Element params = packetBody.element("query").element("params");
+    	
+    	 // iterate through child elements of root with element name "foo"
+        for ( Iterator i = params.elementIterator( "param" ); i.hasNext(); ) {
+            Element param = (Element) i.next();
+            String key = param.attributeValue(Constants.ParametrName);
+    	    String value = param.attributeValue(Constants.ParametrValue);
+    	    
+    	    result.put(key, value);
+        }
+    	
+   
+    	
+    	return result;
+    }
+    
+    
+    
+    public static ConferenceMessagesParams  GetConferenceMessagesParams (Packet packet){
+    
+    	HashMap<String, String> params = ExtractParametrs(packet);
+    	
+    	ConferenceMessagesParams result = new ConferenceMessagesParams();
+    	
+    	result.ConferenceId = params.get("ConferenceId");
+    	
+    	return result;
+    }
+    
+    public static MessageDeliveredAcceptorParams  GetMessageDeliveredAcceptorParams (Packet packet){
+        
+    	HashMap<String, String> params = ExtractParametrs(packet);
+    	
+    	MessageDeliveredAcceptorParams result = new MessageDeliveredAcceptorParams();
+    	
+    	result.Jid = params.get("jid");
+    	result.Timestamp = params.get("timestamp");
+    	
+    	return result;
+    }
+}

@@ -1,0 +1,9 @@
+﻿@model XChat.Areas.Administration.ViewModels.AccountViewModels.NotificationViewModel
+
+<div class="page-header">
+    <h3>@Model.DomainModel.Title</h3>
+    <h4 class="text-success">Дата получения : @Model.DomainModel.SendDate</h4>
+</div>
+<div>
+    <p class="lead">@Html.Raw(Model.DomainModel.Value)</p>
+</div>

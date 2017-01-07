@@ -1,0 +1,53 @@
+2013-11-18 21:43:53,693 [8484] ERROR [(null)] - ErrorUid: 6D61B87C-F7EC-4A97-84D6-DBEF061E2699
+                                             [System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.]
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at System.Threading.LazyHelpers`1.ActivatorFactorySelector()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at System.Threading.LazyInitializer.EnsureInitialized[T](T& target, Boolean& initialized, Object& syncLock)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.EnsureInitialized() in d:\Work\Xmpp\XChatServer\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 27
+   at XChat.MvcApplication.Application_Start() in d:\Work\Xmpp\XChatServer\XChat\Global.asax.cs:line 32
+[System.InvalidOperationException : The ForeignKeyAttribute on property 'ScreenshotUnitId' on type 'XChat.Models.DB.ImageFile' is not valid. The navigation property 'ScreenOwner' was not found on the dependent type 'XChat.Models.DB.ImageFile'. The Name value should be a valid navigation property name.]
+   at System.Data.Entity.ModelConfiguration.Conventions.ForeignKeyPrimitivePropertyAttributeConvention.ForeignKeyAttributeConventionImpl.ApplyNavigationProperty(PropertyInfo propertyInfo, ModelConfiguration modelConfiguration, ForeignKeyAttribute foreignKeyAttribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.ForeignKeyPrimitivePropertyAttributeConvention.ForeignKeyAttributeConventionImpl.Apply(PropertyInfo propertyInfo, ModelConfiguration modelConfiguration, ForeignKeyAttribute foreignKeyAttribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.AttributeConfigurationConvention`3.System.Data.Entity.ModelConfiguration.Conventions.IConfigurationConvention<TMemberInfo,TConfiguration>.Apply(TMemberInfo memberInfo, Func`1 configuration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyPropertyConfiguration(PropertyInfo propertyInfo, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapStructuralElements[TStructuralTypeConfiguration](Type type, ICollection`1 annotations, Action`2 propertyMappingAction, Boolean mapDeclaredPropertiesOnly, Func`1 structuralTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EdmEntityType entityType, Func`1 entityTypeConfiguration, Type sourceType)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.<>c__DisplayClass18.<MapEntityType>b__14(PropertyMapper m, PropertyInfo p)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapStructuralElements[TStructuralTypeConfiguration](Type type, ICollection`1 annotations, Action`2 propertyMappingAction, Boolean mapDeclaredPropertiesOnly, Func`1 structuralTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.<>c__DisplayClass7.<MapTypes>b__1(Type type)
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Data.Entity.ModelConfiguration.Utilities.IEnumerableExtensions.Each[T](IEnumerable`1 ts, Action`1 action)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.LazyInternalContext.MarkDatabaseInitialized()
+   at System.Data.Entity.Database.Initialize(Boolean force)
+   at XChat.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer..ctor() in d:\Work\Xmpp\XChatServer\XChat\Filters\InitializeSimpleMembershipAttribute.cs:line 37
+
+                                             
+2013-11-18 21:44:39,961 [8720] ERROR [(null)] - ErrorUid: B24305DB-EF20-43E7-BAE1-7781B7FD1B31
+                                             [System.InvalidOperationException : Multiple types were found that match the controller named 'Home'. This can happen if the route that services this request ('{controller}/{action}/{id}') does not specify namespaces to search for a controller that matches the request. If this is the case, register this route by calling an overload of the 'MapRoute' method that takes a 'namespaces' parameter.
+
+The request for 'Home' has found the following matching controllers:
+XChat.Controllers.HomeController
+ELibrary.Controllers.HomeController]
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerTypeWithinNamespaces(RouteBase route, String controllerName, HashSet`1 namespaces)
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerType(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.DefaultControllerFactory.System.Web.Mvc.IControllerFactory.GetControllerSessionBehavior(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcRouteHandler.GetSessionStateBehavior(RequestContext requestContext)
+   at System.Web.Mvc.MvcRouteHandler.GetHttpHandler(RequestContext requestContext)
+   at System.Web.Routing.UrlRoutingModule.PostResolveRequestCache(HttpContextBase context)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+                                             

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес организации</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="ActivityDirections" xml:space="preserve">
+    <value>Направления деятельности</value>
+  </data>
+  <data name="ActivityTypes" xml:space="preserve">
+    <value>Типы деятельности</value>
+  </data>
+  <data name="Required_Val_Message" xml:space="preserve">
+    <value>Значение не может быть пустым</value>
+  </data>
+  <data name="String_Length_Val_Message" xml:space="preserve">
+    <value>Введенное значение слишком длинное</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="FacebookProfile" xml:space="preserve">
+    <value>Ссылка на профиль в  Facebook</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Широта</value>
+  </data>
+  <data name="LinkedInProfile" xml:space="preserve">
+    <value>Ссылка на профиль в LinkedIn </value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Долгота</value>
+  </data>
+  <data name="OrganizationForm" xml:space="preserve">
+    <value>Форма организации</value>
+  </data>
+  <data name="RegistrationTime" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="LastUpdateTime" xml:space="preserve">
+    <value>Дата последнего обновления</value>
+  </data>
+  <data name="ShortSpecification" xml:space="preserve">
+    <value>Краткое описание</value>
+  </data>
+  <data name="TwitterProfile" xml:space="preserve">
+    <value>Ссылка на профиль в Twitter </value>
+  </data>
+  <data name="VkProfile" xml:space="preserve">
+    <value>Ссылка на профиль в Вконтакте </value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Веб-сайт </value>
+  </data>
+  <data name="Email_Val_Message" xml:space="preserve">
+    <value>Невалидный email</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="EducationalInstitution" xml:space="preserve">
+    <value>Образовательное учреждение</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="PersonStatuses" xml:space="preserve">
+    <value>Статусы пользователя</value>
+  </data>
+  <data name="IsEmailPublic" xml:space="preserve">
+    <value>Разрешил публиковать e-mail </value>
+  </data>
+  <data name="IsPhonePublic" xml:space="preserve">
+    <value>Разрешил публиковать телефон</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="ProjectStateId" xml:space="preserve">
+    <value>Статус проекта</value>
+  </data>
+  <data name="Annotation" xml:space="preserve">
+    <value>Аннотация</value>
+  </data>
+  <data name="Specification" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="PracticalImportance" xml:space="preserve">
+    <value>Практическая важность</value>
+  </data>
+  <data name="ActivityValue" xml:space="preserve">
+    <value>Интенсивность активности</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>Время окончания</value>
+  </data>
+  <data name="ResourceStateId" xml:space="preserve">
+    <value>Статус ресурса</value>
+  </data>
+  <data name="ResourceTypeId" xml:space="preserve">
+    <value>Тип ресурса</value>
+  </data>
+  <data name="OrganizationTitle" xml:space="preserve">
+    <value>Организация</value>
+  </data>
+  <data name="ProjectTitle" xml:space="preserve">
+    <value>Проект</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Дата начала</value>
+  </data>
+  <data name="Model_Val_Message" xml:space="preserve">
+    <value>Ошибка валидации сохраняемых данных. Данные некорректны.</value>
+  </data>
+  <data name="DependentOrganization" xml:space="preserve">
+    <value>Связанная организация</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="RelationType" xml:space="preserve">
+    <value>Тип взаимосвязи</value>
+  </data>
+  <data name="PersonTitle" xml:space="preserve">
+    <value>Персона</value>
+  </data>
+	<data name="Tags" xml:space="preserve">
+    <value>Теги</value>
+  </data>
+</root>

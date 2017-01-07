@@ -1,0 +1,46 @@
+﻿@using System.Web.Mvc.Html
+@model XChat.Areas.Administration.ViewModels.AccountViewModels.LoginViewModel
+
+@{
+	ViewBag.Title = "Карта науки: Панель администрирования. Вход на сайт";
+	Layout = "../Shared/_LayoutBase.cshtml";
+}
+@using (Html.BeginForm(new
+{
+	ViewBag.ReturnUrl
+}))
+{
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary(true, "Ошибка!", new
+{
+	@class = "alert alert-error"
+})
+
+	<div>
+		<hgroup class="page-header" style="margin-top: 20px">
+			<h1>@ViewBag.Title</h1>
+		</hgroup>
+		<div class="editable-field-box">
+			@Html.LabelFor(m => m.UserName)
+			@Html.TextBoxFor(m => m.UserName, new {@class = "form-control"})
+		</div>
+		<div class="editable-field-box">
+			@Html.LabelFor(m => m.Password)
+			@Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+		</div>
+		<div class="checkbox-inline">
+			@Html.CheckBoxFor(m => m.RememberMe)
+			@Html.LabelFor(e => e.RememberMe)
+		</div>
+		<div style="clear: both; margin-bottom: 15px;">
+			@Html.ActionLink("Восстановить пароль?", "PasswordRecovery", "Account")
+		</div>
+		<div style="clear: both; margin-bottom: 15px;" class="pull-right">
+			@Html.ActionLink("Регистрация", "Register", "Account")
+		</div>
+		<div>
+			<input type="submit" class="btn btn-primary" value="Вход" />
+		</div>
+	</div>
+}
+

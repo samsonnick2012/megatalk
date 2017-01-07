@@ -1,0 +1,101 @@
+package com.omertex.offliner.iqhandlers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.Packet;
+
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.services.ArchiveMessageService;
+import com.omertex.offliner.mongodb.services.ArchivePolicyService;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.HistoryBuilder;
+import com.omertex.offliner.utilites.Logger;
+import com.omertex.offliner.utilites.MessageParametrsHelper;
+import com.omertex.offliner.utilites.PacketParametrsHelper;
+
+public class HistoryIQHandler extends BaseIQHandler {
+
+	private final String namespace = "story";
+	
+    private ArchiveMessageService archiveMesageService;	 
+	private ArchivePolicyService archivePolicyService;
+	
+	public HistoryIQHandler(String moduleName) throws Exception {
+		
+		super(moduleName);  
+		
+		info = new IQHandlerInfo("query", namespace); 
+		
+		archiveMesageService  = new ArchiveMessageService();		
+		archivePolicyService = new ArchivePolicyService();
+	}
+	
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+    	
+    	try {    
+			  String userJid = MessageParametrsHelper.getFrom(packet);
+  		  	  String jid = PacketParametrsHelper.getParam(packet, "jid");  
+
+  		      List<ArchiveMessage> messages;
+			   
+  		  	  if(jid == null){
+  		  		messages = archiveMesageService.getChangedMessagesRelatedToUser(userJid,-1, OpenfireDataHelper.GetUserConferences(userJid), getFromParametr(packet));
+  		  	  }
+  		  	  else{
+  		  		messages = archiveMesageService.getChangedMessagesRelatedToUser(userJid,jid,-1, getFromParametr(packet));
+  		  	  }
+		
+
+			  IQ result = IQ.createResultIQ(packet);
+			  Element container = packet.getChildElement().createCopy();
+              fillResultBody(messages,container);
+              result.setChildElement(container);
+              
+			  return result;
+			 		     
+		 }catch (Exception e){  
+
+			  Logger.Log(e.getMessage());
+			  return ErrorResponce(packet, e.getMessage()); 
+		 }   	    	
+    }   
+    
+    private void fillResultBody(List<ArchiveMessage> messages, Element container) throws DocumentException{
+    	  
+    	  HistoryBuilder builder = new HistoryBuilder();
+		  
+    	  long lastReadDate = 0;
+    	  
+		  for(ArchiveMessage message : messages){
+			  
+			  if(message.getSentDate() > lastReadDate){
+				  lastReadDate = message.getSentDate();
+			  }
+			  
+			  builder.addMessage(message);
+	      }
+
+		  builder.Build(container);
+		
+		  container.addElement("timestamp").setText(String.valueOf(lastReadDate));
+    }
+    
+    private long getFromParametr(Packet packet){
+    	 
+    	long fromDate = 0;
+		String timestamp = PacketParametrsHelper.getParam(packet, "timestamp");
+		  
+		if(timestamp != null){
+		    fromDate =Long.parseLong(timestamp);  
+		}
+		
+		return fromDate;
+    }
+}

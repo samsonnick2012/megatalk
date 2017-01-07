@@ -1,0 +1,15 @@
+﻿@{
+	Layout = "~/Areas/Administration/Views/Shared/_MainLayout.cshtml";
+}
+
+@section scripts
+{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryvalext")
+	@Scripts.Render("~/bundles/jqueryvalun")
+
+	@RenderSection("scripts", false)
+}
+
+@RenderBody()
+

@@ -1,0 +1,11 @@
+<web-app>
+    <servlet>
+        <servlet-name>com.telexfree.jsp.push_002doffline_002dmessage_jsp</servlet-name>
+        <servlet-class>com.telexfree.jsp.push_002doffline_002dmessage_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>com.telexfree.jsp.push_002doffline_002dmessage_jsp</servlet-name>
+        <url-pattern>/push-offline-message.jsp</url-pattern>
+    </servlet-mapping>
+</web-app>

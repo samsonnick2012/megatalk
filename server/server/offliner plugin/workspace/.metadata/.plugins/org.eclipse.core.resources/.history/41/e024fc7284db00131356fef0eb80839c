@@ -1,0 +1,274 @@
+package org.jivesoftware.openfire.plugin.data;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.jivesoftware.database.DbConnectionManager;
+import org.jivesoftware.openfire.plugin.Constants;
+import org.jivesoftware.openfire.plugin.Helper;
+import org.jivesoftware.util.JiveGlobals;
+
+
+
+public class DatabaseInitializer {
+	
+	public static final String AddTableOfLastMessageTime = 
+			
+			"CREATE TABLE [dbo].[ofLastMessageTime](" +
+	           "[id] [int] IDENTITY(1,1) NOT NULL," +
+	           "[receiverJid] [nvarchar](max) NOT NULL," +
+	           "[senderJid] [nvarchar](max) NOT NULL," +
+	           "[lastDeliveredTime] [bigint] NULL," +
+	           "[lastReadTime] [bigint] NULL," +
+	           
+	           "CONSTRAINT [ofLastMessageTime_pk] PRIMARY KEY CLUSTERED " +
+	           "(" +
+	           		"[id] ASC" +
+	           	")"+
+	           	"WITH ("+
+	           	        "PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]"+
+	           	      ")" + 
+	           	"ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]";
+
+	public static String CreateUpdateDeliveredStatusProcedure = 
+			"CREATE PROCEDURE [dbo].[UpdateDeliveredStatus] " +
+
+				"@receiverJid  nvarchar(MAX), " +
+				"@senderJid  nvarchar(MAX), " +
+				"@lastDeliveredTime bigint " +
+				"AS " +
+				"BEGIN " +
+
+				"SET NOCOUNT ON; " +
+	
+				"UPDATE ofLastMessageTime " +
+				"SET lastDeliveredTime = @lastDeliveredTime " +
+				"WHERE senderJid = @senderJid " +
+				"AND receiverJid = @receiverJid " +
+    
+   				"IF @@ROWCOUNT=0 "  +
+   				"INSERT INTO ofLastMessageTime ( receiverJid, senderJid, lastDeliveredTime ) " +
+   				"VALUES ( @receiverJid, 	@senderJid , @lastDeliveredTime ) "+
+      
+			"END";
+	
+	public static String CreateUpdateReadStatusProcedure = 
+			"CREATE PROCEDURE [dbo].[UpdateReadStatus] " +
+
+				"@receiverJid  nvarchar(MAX), " +
+				"@senderJid  nvarchar(MAX), " +
+				"@lastReadTime bigint " +
+				"AS " +
+				"BEGIN " +
+
+				"SET NOCOUNT ON; " +
+	
+				"UPDATE ofLastMessageTime " +
+				"SET lastReadTime = @lastReadTime " +
+				"WHERE senderJid = @senderJid " +
+				"AND receiverJid = @receiverJid " +
+    
+   				"IF @@ROWCOUNT=0 "  +
+   				"INSERT INTO ofLastMessageTime ( receiverJid, senderJid, lastReadTime ) " +
+   				"VALUES ( @receiverJid, 	@senderJid , @lastReadTime ) "+
+      
+			"END";
+	
+	public static String CreateGetConferenceUsersProcedure =
+			
+			"CREATE PROCEDURE [dbo].[GetConferenceUsers]" +
+	        "@conferenceJid nvarchar(MAX)" +
+	        "AS" +
+	        "BEGIN" +
+	        	"SELECT username FROM ofRoster" +
+	        	"WHERE jid = @conferenceJid" +
+	        "END";
+	
+	public static String CreateGetMessagesForOfflineUserProcedure = 
+			
+			"CREATE PROCEDURE [dbo].[GetMessagesForOfflineUser] " +
+				"@userJid nvarchar(MAX), " +
+				"@conferenceJid nvarchar(MAX) " +
+			"AS " +
+			"BEGIN " +
+      
+   				"DECLARE @TempDeliveredTable table (sentDate bigint, lastDeliveredTime bigint,senderJid nvarchar(MAX), body nvarchar(MAX)) " +
+   				"DECLARE @TempReadTable table (sentDate bigint, lastReadTime bigint,senderJid nvarchar(MAX)) "  +
+
+  				"DECLARE @ResultTable table (sentDate bigint, body nvarchar(MAX), NotDeliveredJids nvarchar(MAX), NotReadJids nvarchar(MAX)) "  +
+
+
+				"SET NOCOUNT ON; "+
+
+				"INSERT INTO @TempDeliveredTable " +
+				"SELECT "+
+					"sentDate, "	+
+					"lastDeliveredTime, "+		
+					"senderJid, "	+
+					"body "	+
+				"FROM ofMessageArchive " +
+				"INNER JOIN dbo.ofLastMessageTime " +
+					"ON   ofLastMessageTime.lastDeliveredTime < ofMessageArchive.sentDate "+   
+					"AND  ofLastMessageTime.receiverJid = @conferenceJid "    +
+				"WHERE toJID = @conferenceJid "+
+				"AND sentDate >  "+
+				"( "   +
+				   "SELECT lastDeliveredTime "   +
+				   "FROM ofLastMessageTime "    +
+				   "WHERE receiverJid =  @conferenceJid  "   +
+				   "AND senderJid =  @userJid "+   
+				")"   +
+				"ORDER BY sentDate DESC "+
+
+
+				"INSERT INTO @TempReadTable "+
+				"SELECT " +
+					"sentDate, "		+
+					"lastReadTime, "	+	
+					"senderJid "		+
+				"FROM ofMessageArchive " +
+				"INNER JOIN dbo.ofLastMessageTime " +
+					"ON   ofLastMessageTime.lastReadTime < ofMessageArchive.sentDate "   + 
+					"AND  ofLastMessageTime.receiverJid = @conferenceJid "    +
+				"WHERE toJID = @conferenceJid "+
+				"AND sentDate > " +
+				"( "  +
+						"SELECT lastDeliveredTime "    +
+						"FROM ofLastMessageTime " +    
+						"WHERE receiverJid =  @conferenceJid  " +    
+						"AND senderJid =  @userJid "    + 
+				") "  +
+				"ORDER BY sentDate DESC "+
+				
+				"SET NOCOUNT OFF; "+
+
+ 
+
+				"INSERT INTO @ResultTable (sentDate,body,NotDeliveredJids) "+
+				"SELECT "+
+					"t1.sentDate, " +   
+					"t1.body, "    +
+					"STUFF( "   +
+							"( " +
+								"SELECT "         +   
+									" ', ' + t2.senderJid "  +            
+								"FROM @TempDeliveredTable t2 "   +          
+								"WHERE t1.sentDate=t2.sentDate "  +           
+								"ORDER BY t2.senderJid "    +       
+								"FOR XML PATH(''), TYPE "  + 
+								
+							").value('.','varchar(max)') " +        
+							",1,2, '' "    +      
+						 ") "+
+					"AS NotDeliveredJids "  +             
+				 "FROM @TempDeliveredTable t1 "+
+				 "GROUP BY t1.sentDate,t1.body "+
+ 
+
+ 
+			     "UPDATE @ResultTable " +
+			     "SET NotReadJids = XNotReadJids " +
+			    		 "FROM "+
+			    		 "( " +
+			    				 "SELECT "	+
+			    				 		"t1.sentDate AS XSentDate, "+		
+					    				"STUFF( "	 +
+					    						 "( "+
+					    						      "SELECT "		  +
+					    								       " ', ' + t2.senderJid "+			
+					    							  "FROM @TempReadTable t2 "+		
+					    							  "WHERE t1.sentDate=t2.sentDate "	+	
+					    							  "ORDER BY t2.senderJid "+	
+					    							  "FOR XML PATH(''), TYPE "+
+					    						 ").value('.','varchar(max)') "   +
+										        ",1,2, '' "   +
+										      ") "	+
+										 "AS XNotReadJids "	+
+								"FROM @TempReadTable t1 " +
+								"GROUP BY t1.sentDate " +
+						") AS X "  +
+						"WHERE XSentDate = sentDate " +
+			  
+						"SELECT*FROM @ResultTable "+
+			"END ";
+	
+	public static String CheckIfofLastMessageTimeTableExist = 
+			
+			"IF OBJECT_ID (N'ofLastMessageTime', N'U') IS NOT NULL " +
+				"SELECT 1 AS RESULT " +
+			"ELSE SELECT 0 AS RESULT";
+
+	public static void Initialize() throws ClassNotFoundException, SQLException{
+		
+		boolean tableExists = false;
+		boolean removeTableIfExists = false;
+		
+		Connection conn = DbConnectionManager.getConnection();
+	
+    	Statement ps = conn.createStatement();
+    	
+    	ResultSet rs = ps.executeQuery(CheckIfofLastMessageTimeTableExist);
+    	
+    	if(rs.next() && "1".equals(rs.getString("RESULT"))){
+    		tableExists = true;
+    	}
+    	
+    	String value = JiveGlobals.getProperty("removeTableIfExists");
+    	
+    	if(value == null){
+    		value = "false";
+    		JiveGlobals.setProperty("removeTableIfExists", value);
+    	}
+    	
+    	removeTableIfExists = "true".equals(value) ? true : false;
+    	
+    	ps.execute(ClearDatabaseOfflinerObjects(removeTableIfExists && tableExists));
+    	
+    	if(removeTableIfExists && tableExists){
+    		ps.execute(AddTableOfLastMessageTime);
+    	}
+    	
+    	ps.execute(CreateUpdateDeliveredStatusProcedure);
+    	ps.execute(CreateUpdateReadStatusProcedure);
+    	ps.execute(CreateGetConferenceUsersProcedure);
+    	ps.execute(CreateGetMessagesForOfflineUserProcedure);
+    	
+    	conn.close();
+	}
+	
+	public static String ClearDatabaseOfflinerObjects(boolean removeTable){
+		
+		String result = removeTable 
+				? 
+							"DROP TABLE ofLastMessageTime "	
+				: " ";
+		
+		result += 
+				   (
+				      " ; " +
+				     
+				       "IF OBJECT_ID('UpdateReadStatus', 'P') IS NOT NULL " +
+				       		"DROP PROC UpdateReadStatus "+
+		
+					   "; " +
+
+					   "IF OBJECT_ID('UpdateDeliveredStatus', 'P') IS NOT NULL "+
+				    		 "DROP PROC UpdateDeliveredStatus " +
+					   "; " +
+				    		 
+					   "IF OBJECT_ID('GetConferenceUsers', 'P') IS NOT NULL "+
+					   		"DROP PROC GetConferenceUsers " +
+					   "; " +
+			    		 
+				       "IF OBJECT_ID('GetMessagesForOfflineUser', 'P') IS NOT NULL "+
+				   	    	"DROP PROC GetMessagesForOfflineUser " +
+				       "; "
+				  );
+		
+		return result;
+	}
+
+}

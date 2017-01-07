@@ -1,0 +1,23 @@
+build note:
+
+http://maven.reucon.com/projects/public/maven-openfire-plugin/1.0.1/
+
+using openfire maven plugin for build, but it does not exits on maven central repository, so we should build and
+install maven plugin on our local maven repository
+
+build openfire maven plugin:
+1. get sources from https://github.com/srt/maven-openfire-plugin commit d4d24d7734e7fe46c2d1568e92f08f63d0cede43
+2. mvn clean install
+
+then build and install this plugin
+mvn clean install
+
+after successes build jar file should be in target directory
+upload it via openfire admin panel (plugins -> upload plugin)
+
+after upload setup it (Server -> Server Settings -> TelexFREE offline message plugin)
+
+properties description:
+enable - enables plugin
+api key - key for authorization on web service
+api url - url to push web service

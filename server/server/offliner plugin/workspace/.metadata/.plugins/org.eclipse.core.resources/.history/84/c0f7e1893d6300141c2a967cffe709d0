@@ -1,0 +1,59 @@
+package com.omertex.offliner.mongodb;
+
+import java.net.UnknownHostException;
+import java.util.Arrays;
+
+import com.google.code.morphia.Datastore;
+import com.google.code.morphia.Morphia;
+import com.google.code.morphia.mapping.DefaultCreator;
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+
+public class MongoDocumentDatabase {
+	
+	private static MongoDocumentDatabase mongoDatabase;
+	
+	private Datastore dataStore;
+	
+	private Morphia morphia;
+	
+	public static synchronized boolean wasDatabaseSet(){
+			return mongoDatabase != null;
+	}
+	
+	public static synchronized MongoDocumentDatabase setMongoDocumentDatabase(String host, Integer port, String database, String user, String password) throws Exception{
+		if(mongoDatabase == null){
+			mongoDatabase = new MongoDocumentDatabase(host,port,database,user,password);
+			return mongoDatabase;
+		}
+		
+		throw new Exception("Database was already set");
+	}
+	
+	public static MongoDocumentDatabase getMongoDocumentDatabase() throws Exception{
+		if(mongoDatabase == null){
+			throw new Exception("database wasn't set");
+		}
+		
+		return mongoDatabase;
+	}
+	
+	private MongoDocumentDatabase(String host, Integer port, String database, String user, String password) throws UnknownHostException{
+		
+		MongoCredential credential = MongoCredential.createMongoCRCredential(user, database, password.toCharArray());
+	    MongoClient mongoClient = new MongoClient(new ServerAddress(host,port),Arrays.asList(credential));
+
+	    morphia = new Morphia();        
+		dataStore = morphia.createDatastore(mongoClient, database); 
+	}
+	
+	public Datastore getDatastore(){
+		return dataStore;
+	}
+	
+	public void mapPackage(String packageName){
+		morphia.mapPackage(packageName); 
+	}
+}

@@ -1,0 +1,4 @@
+Guid : 88e72d43-bd2a-49a9-a76f-196e152b721f | File request accepted | Date : 17:54:42 +03:00 03.54.14  | Id: 3
+Guid : 88e72d43-bd2a-49a9-a76f-196e152b721f | File sent | Date : 17:54:44 +03:00 03.54.14  | Filename: patrul2.png
+Guid : 545a4cb4-4321-4e41-8eea-66273b72b10f | File request accepted | Date : 17:54:44 +03:00 03.54.14  | Id: 3
+Guid : 545a4cb4-4321-4e41-8eea-66273b72b10f | File sent | Date : 17:54:44 +03:00 03.54.14  | Filename: patrul2.png

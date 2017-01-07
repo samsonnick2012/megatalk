@@ -1,0 +1,41 @@
+﻿@using Innostar.UI.Areas.Administration.ViewModels
+@model Application.Core.Data.IPageableList<MessageTemplateViewModel>
+
+@{
+	ViewBag.Title = "Шаблоны";
+	Layout = "../Shared/_MainLayout.cshtml";
+}
+
+<div class="pull-right">
+	@Html.ActionLink("Создать", "Create")
+</div>
+
+<table class="table table-striped table-bordered table-hover">
+	<tr>
+	    <th>
+	        Название шаблона
+	    </th>
+	    <th>
+	        Действия
+	    </th>
+	</tr>
+
+	@foreach (var item in Model.Items)
+ {
+     <tr>
+         <td>
+             @Html.ActionLink(item.Title, "Edit", new { id = item.Id }) 
+         </td>
+         <td>
+             @if (!item.Blocked)
+             {
+                 @Html.ActionLink("Удалить", "Delete", new {id = item.Id})
+             }
+         </td>
+     </tr>
+     
+ }
+
+</table>
+
+@Html.Partial("_Paging", Model)

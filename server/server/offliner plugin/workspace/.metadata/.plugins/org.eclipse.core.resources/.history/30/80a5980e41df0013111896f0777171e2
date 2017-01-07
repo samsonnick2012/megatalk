@@ -1,0 +1,90 @@
+package org.jivesoftware.openfire.plugin.handlers;
+
+import java.util.List;
+
+import org.dom4j.Element;
+import org.dom4j.tree.DefaultElement;
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.jivesoftware.openfire.plugin.ConferenceMessageWithStatus;
+import org.jivesoftware.openfire.plugin.Helper;
+import org.jivesoftware.openfire.plugin.data.SqlAccess;
+import org.xmpp.packet.IQ;
+
+
+public class GetConferenceMessagesIQHandler extends BaseIQHandler { 
+ 
+    public GetConferenceMessagesIQHandler(String moduleName)  
+    {  
+		  super(moduleName);  
+		  info = new IQHandlerInfo("query", "conference:messages");  
+    }  
+    
+    public void initialize(XMPPServer server) {  
+    	super.initialize(server);  
+    }  
+      
+    public IQHandlerInfo getInfo()  
+    {  
+    	return info;  
+    }  
+      
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+  
+		 try 
+		 {  
+			  IQ result = IQ.createResultIQ(packet); 
+			
+			  result.setChildElement(packet.getChildElement().createCopy()); 	  
+			  Element messagesBody = result.getChildElement().addElement("messages");  
+			
+			  if (packet.getType().equals(IQ.Type.get)) 
+			  {   
+				  String to = Helper.GetConferenceMessagesParams(packet).ConferenceJid;
+			
+				  String from =packet.getFrom().toString();
+				  
+				  List<ConferenceMessageWithStatus> story = SqlAccess.GetConferenceStoryWithStatusFake();
+				  
+				  for (ConferenceMessageWithStatus message : story) {
+					  
+					  Element confMessage = CreateMessage(message);
+					  messagesBody.add(confMessage);
+			      }
+			  }
+			  else {  
+			          return WrongTypeResponce(packet);
+			  }  
+		     
+			  return result;  
+		 } catch (Exception e) {
+			 
+			 Helper.RightToFile(e.getMessage());
+			 return ErrorResponce(packet, e.getMessage());
+		 }  
+    }  
+    
+    private Element CreateMessage(ConferenceMessageWithStatus message){
+    	
+    	Element result = new DefaultElement("message");
+    	
+    	result.addElement("body").setText(message.Message);
+    	
+    	Element status = result.addElement("status");
+    	
+    	Element unDelivered = status.addElement("undelivered");
+    	
+    	Element unRead = status.addElement("unread");
+    	
+    	for (String jid : message.unDeliverJids) {
+    		unDelivered.addElement("jid").setText(jid);
+    	}
+    	
+    	for (String jid : message.unReadJids) {
+    		unRead.addElement("jid").setText(jid);
+    	}
+    	
+    	return result;
+    }
+}  

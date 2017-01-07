@@ -1,0 +1,103 @@
+package com.omertex.offliner.iqhandlers;
+
+import java.util.List;
+
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.jivesoftware.openfire.IQHandlerInfo;
+import org.jivesoftware.openfire.auth.UnauthorizedException;
+import org.xmpp.packet.IQ;
+import org.xmpp.packet.Packet;
+
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.services.ArchiveMessageService;
+import com.omertex.offliner.mongodb.services.ArchivePolicyService;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.HistoryBuilder;
+import com.omertex.offliner.utilites.Logger;
+import com.omertex.offliner.utilites.MessageParametrsHelper;
+import com.omertex.offliner.utilites.PacketParametrsHelper;
+
+public class HistoryIQHandler extends BaseIQHandler {
+
+	private final String namespace = "story";
+	
+    private ArchiveMessageService archiveMesageService;	 
+	private ArchivePolicyService archivePolicyService;
+	
+	public HistoryIQHandler(String moduleName) throws Exception {
+		
+		super(moduleName);  
+		
+		info = new IQHandlerInfo("query", namespace); 
+		
+		archiveMesageService  = new ArchiveMessageService();		
+		archivePolicyService = new ArchivePolicyService();
+	}
+	
+    public IQ handleIQ(IQ packet) throws UnauthorizedException{
+    	
+    	try {    
+			  String userJid = MessageParametrsHelper.getFrom(packet);
+  		  		  
+			  ArchivePolicy policy =  archivePolicyService.getPolicy(userJid);	  
+			  List<ArchiveMessage> messages = archiveMesageService.getChangedMessagesRelatedToUser(userJid,policy.getGlobalRestriction(), OpenfireDataHelper.GetUserConferences(userJid), getFromParametr(packet));
+
+			  IQ result = IQ.createResultIQ(packet);
+			  
+    		 
+    		  Element body = getResultBody(policy,messages);
+    		  Logger.Log("BODY");
+    		  Logger.Log(body);
+    		  Logger.Log("RESULT EMTY");
+    		  Logger.Log(result.getElement());
+    		  Logger.Log("RESULT FILLED");
+    		  result.getElement().add(body);
+    		  Logger.Log(result.getElement());
+			  return result;
+			 		     
+		 }catch (Exception e){  
+
+			  Logger.Log(e.getStackTrace().toString());
+			  return ErrorResponce(packet, e.getMessage()); 
+		 }   	    	
+    }   
+    
+    private Element getResultBody(ArchivePolicy policy, List<ArchiveMessage> messages) throws DocumentException{
+    	  
+    	  HistoryBuilder builder = new HistoryBuilder();
+		  
+    	  long lastReadDate = 0;
+    	  
+		  for(ArchiveMessage message : messages){
+			  
+			  if(!policy.doesSatisfyePolicy(message)){
+				  continue;
+			  }
+		  
+			  if(message.getSentDate() > lastReadDate){
+				  lastReadDate = message.getSentDate();
+			  }
+			  
+			  builder.addMessage(message);
+	      }
+		  
+		  Element result =  builder.Build();
+		  result.addElement("timestamp").setText(String.valueOf(lastReadDate));
+		  
+		  return result;
+    }
+    
+    private long getFromParametr(Packet packet){
+    	 
+    	long fromDate = 0;
+		String timestamp = PacketParametrsHelper.getParam(packet, "timestamp");
+		  
+		if(timestamp != null){
+		    fromDate =Long.parseLong(timestamp);  
+		}
+		
+		return fromDate;
+    }
+}

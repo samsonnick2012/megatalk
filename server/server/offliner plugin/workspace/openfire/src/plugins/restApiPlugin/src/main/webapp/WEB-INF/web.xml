@@ -1,0 +1,10 @@
+<web-app>
+    <servlet>
+        <servlet-name>OpenfireRestApiServlet</servlet-name>
+        <servlet-class>com.telexfree.restapi.JerseyServletWrapper</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OpenfireRestApiServlet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+</web-app>

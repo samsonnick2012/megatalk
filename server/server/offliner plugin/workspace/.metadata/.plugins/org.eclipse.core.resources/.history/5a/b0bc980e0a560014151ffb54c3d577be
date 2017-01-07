@@ -1,0 +1,82 @@
+package com.omertex.offliner.interceptors;
+
+import java.util.List;
+
+import org.jivesoftware.openfire.XMPPServer;
+import org.jivesoftware.openfire.interceptor.PacketRejectedException;
+import org.jivesoftware.openfire.session.Session;
+import org.xmpp.packet.Message;
+import org.xmpp.packet.Packet;
+
+import com.omertex.offliner.common.MessageType;
+import com.omertex.offliner.mongodb.entities.ArchiveMessage;
+import com.omertex.offliner.mongodb.entities.ArchivePolicy;
+import com.omertex.offliner.mongodb.services.ArchiveMessageService;
+import com.omertex.offliner.mongodb.services.ArchivePolicyService;
+import com.omertex.offliner.sql.OpenfireDataHelper;
+import com.omertex.offliner.utilites.Logger;
+
+public class ArchiveInterceptor extends BaseInterceptor{
+
+	private  ArchiveMessageService archiveMessageService;
+	
+	
+	public ArchiveInterceptor(int order) throws Exception{
+		
+		super(order,"archive");		
+	   
+		archiveMessageService = new ArchiveMessageService();	
+	}
+	
+	
+	public void interceptPacket(Packet packet, Session session,
+			boolean incoming, boolean processed) throws PacketRejectedException {
+		
+		String from  = packet.getFrom().toBareJID().toString();
+		String to  = packet.getTo().toBareJID().toString();
+		
+
+			Logger.Log("INPUT FROM "+ from);
+		
+		
+		if(incoming && (!processed) && shouldProcessed(packet)){
+			
+			try{
+				
+				Message message = (Message)packet;
+						
+				ArchiveMessage archiveMessage =  new ArchiveMessage(message);
+				
+				archiveMessageService.Save(archiveMessage);
+
+				if(!MessageType.system.equals(archiveMessage.getMessageType())){
+					ResponceBack(message);
+				}
+				
+			}
+			catch(Exception ex){
+				Logger.Log(ex.getMessage());
+			}			
+		}
+		
+	}
+	
+	
+	private void ResponceBack(Message incoming){
+		
+		Message copy = incoming.createCopy();
+			
+		String from = copy.getFrom().toString();
+		
+		copy.getElement().addAttribute("processed", "true");
+		copy.setFrom(copy.getTo());	
+		copy.setTo(from);
+		
+	
+			Logger.Log("RESPONCE TO " + copy.getTo());
+	
+		
+		XMPPServer.getInstance().getMessageRouter().route(copy);
+	}
+}
+

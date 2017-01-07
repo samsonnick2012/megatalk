@@ -1,0 +1,23 @@
+﻿@model XChat.Models.DB.DataFile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Вы уверены что хотите удалить это?</h3>
+<fieldset>
+    <legend>ImageFile</legend>
+
+    <div class="display-label">FileName</div>
+    <div class="display-field">@Model.OriginalFileName</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>
+}
+
+

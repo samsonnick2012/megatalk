@@ -1,0 +1,46 @@
+﻿@model Innostar.UI.Areas.Administration.ViewModels.StatisticsViewModel
+
+@{
+    ViewBag.Title = "Cтатистика";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/administration/statisticsManagement.js"></script>
+}
+
+@Html.HiddenFor(modelItem => Model.HttpBindAddress)
+@Html.HiddenFor(modelItem => Model.XmppAdminLogin)
+@Html.HiddenFor(modelItem => Model.XmppAdminPassword)
+
+<table class="table table-striped table-bordered table-hover">
+    <tr>
+        <th>Название параметра
+        </th>
+        <th>Значение параметра</th>
+    </tr>
+    <tr>
+        <td class="title">
+            @Html.DisplayNameFor(modelItem => Model.UserNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.UserNumber)
+        </td>
+    </tr>
+    <tr>
+        <td class="title">
+            @Html.DisplayNameFor(modelItem => Model.SafeUserNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.SafeUserNumber)
+        </td>
+    </tr>
+    <tr>
+        <td class="title">
+            @Html.DisplayNameFor(modelItem => Model.ActiveUserNumber)
+        </td>
+        <td id="OnlineCounter">
+            @Html.DisplayFor(modelItem => Model.ActiveUserNumber)
+        </td>
+    </tr>
+</table>

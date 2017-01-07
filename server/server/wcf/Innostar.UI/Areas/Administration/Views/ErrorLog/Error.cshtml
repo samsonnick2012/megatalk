@@ -1,0 +1,49 @@
+﻿@using Innostar.UI.Areas.Administration.ViewModels
+
+@model ErrorViewModel
+
+@{
+    ViewBag.Title = "Лог ошибок";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-striped table-bordered table-hover">
+    <tr>
+        <th>Название параметра
+        </th>
+        <th>Значение параметра
+        </th>
+    </tr>
+    <tr>
+        <td class="title">
+            @Html.DisplayNameFor(modelItem => Model.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Title)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(modelItem => Model.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Time)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(modelItem => Model.AuthorizedUzer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.AuthorizedUzer)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(modelItem => Model.DetailedException)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.DetailedException)
+        </td>
+    </tr>
+</table>
